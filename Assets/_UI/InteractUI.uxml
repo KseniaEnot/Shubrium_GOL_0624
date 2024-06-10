@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="root" style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="top: 80%; bottom: auto; width: 60px; align-self: center; align-items: center; -unity-text-align: middle-center; background-image: url(&quot;project://database/Assets/_Sprites/Circle.png?fileID=21300000&amp;guid=a0e35f6b808bb7447826cc6c69ffe448&amp;type=3#Circle&quot;); height: 60px;" />
+    </ui:VisualElement>
+</ui:UXML>
