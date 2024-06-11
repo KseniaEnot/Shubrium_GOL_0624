@@ -18,7 +18,7 @@ public class DialogueManager : MonoBehaviour
 
     public bool isRunning;
 
-    public float dialogueUpdateCooldown;
+    public float dialogueUpdateCooldown = 1000;
     private float untilNextDialogue;
 
     public float dialogueStartDelay;
