@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8804510515193651218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8298514426763547989}
+  - component: {fileID: 6892120544059871048}
+  - component: {fileID: 5450368826416899342}
+  - component: {fileID: 8322110558825591901}
+  - component: {fileID: 3453079818172286058}
+  m_Layer: 5
+  m_Name: Monologue 1st
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8298514426763547989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804510515193651218}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -23.797186, y: 39.71, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6892120544059871048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804510515193651218}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 10, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5450368826416899342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804510515193651218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fda90d2cd434714c82add5f716f3c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 8322110558825591901}
+  dialogueNextButton: {fileID: 0}
+  dialogueManager: {fileID: 3453079818172286058}
+--- !u!114 &8322110558825591901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804510515193651218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0534f42cbcbbc74db96c365b6aefe15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 3453079818172286058}
+--- !u!114 &3453079818172286058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804510515193651218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5a0843205f7414880df15805b5dbd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 0}
+  dialogue:
+    sentences:
+    - "\u041F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E, \u041D\u043E\u0432\u043E\u0431\u0440\u0430\u043D\u0435\u0446!
+      \u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C
+      \u0432 \u043F\u0435\u0440\u0432\u0443\u044E \u0438 \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u0443\u044E
+      \u0432\u043E \u0432\u0441\u0435\u043C \u043C\u0438\u0440\u0435 \xAB\u0421\u0442\u0430\u043D\u0446\u0438\u044E
+      \u0418\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u041A\u043E\u0441\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0445
+      \u041A\u0440\u043E\u0442\u043E\u0432\u044C\u0438\u0445 \u041D\u043E\u0440 \u0438
+      \u041C\u0435\u0436\u0433\u0430\u043B\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+      \u0442\u0443\u0440\u0438\u0437\u043C\u0430\xBB. \u041C\u044B \u043D\u0430\u0437\u044B\u0432\u0430\u0435\u043C
+      \u0435\u0435 \xAB\u0421\u0418\u041A\u041D\xBB."
+    - "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0435 10 \u043B\u0435\u0442
+      \u043C\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u0435\u043C\u0441\u044F \u0438\u0437\u0443\u0447\u0435\u043D\u0438\u0435\u043C
+      \u0447\u0435\u0440\u0432\u043E\u0442\u043E\u0447\u0438\u043D, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
+      \u0442\u0430\u043A \u0443\u0434\u0430\u0447\u043D\u043E \u043D\u0430\u0447\u0430\u043B\u0438
+      \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0442\u044C\u0441\u044F \u043F\u043E
+      \u0432\u0441\u0435\u043C\u0443 \u043A\u043E\u0441\u043C\u043E\u0441\u0443.\r\n"
+    - "\u041D\u0443\u2026 \u041E\u043D\u0438, \u043A\u043E\u043D\u0435\u0447\u043D\u043E,
+      \u043D\u0435\u0441\u0443\u0442 \u0432 \u0441\u0435\u0431\u0435 \u043E\u0433\u0440\u043E\u043C\u043D\u0443\u044E
+      \u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u044C, \u0438 \u0441 \u043C\u043E\u043C\u0435\u043D\u0442\u0430
+      \u0438\u0445 \u0440\u0430\u0441\u043A\u0440\u044B\u0442\u0438\u044F \u043C\u0430\u043B\u043E
+      \u043A\u0442\u043E \u0432\u043E\u043E\u0431\u0449\u0435 \u0441\u043E\u0433\u043B\u0430\u0448\u0430\u0435\u0442\u0441\u044F
+      \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u0442\u044C\u0441\u044F \u0432
+      \u043A\u043E\u0441\u043C\u043E\u0441, \u043F\u043E\u0442\u043E\u043C\u0443
+      \u0447\u0442\u043E \u0442\u044B \u0431\u0443\u043A\u0432\u0430\u043B\u044C\u043D\u043E
+      \u043D\u0435 \u0437\u043D\u0430\u0435\u0448\u044C, \u0447\u0442\u043E \u0441
+      \u0442\u043E\u0431\u043E\u0439 \u043C\u043E\u0436\u0435\u0442 \u043F\u0440\u043E\u0438\u0437\u043E\u0439\u0442\u0438.\r\n"
+    - "\u041D\u043E \u043D\u0430\u0448 \u0433\u0435\u043D\u0438\u0430\u043B\u044C\u043D\u0435\u0439\u0448\u0438\u0439
+      \u0411\u043E\u0441\u0441 \u0443\u0432\u0438\u0434\u0435\u043B \u0432 \u044D\u0442\u043E\u043C
+      \u043D\u0435\u0432\u0435\u0440\u043E\u044F\u0442\u043D\u044B\u0439 \u043F\u043E\u0442\u0435\u043D\u0446\u0438\u0430\u043B,
+      \u0438 \u0432\u043E\u0442 \u0443\u0436\u0435 \u043C\u043D\u043E\u0433\u043E
+      \u043B\u0435\u0442 \u043C\u044B \u0437\u0430\u043D\u0438\u043C\u0430\u0435\u043C\u0441\u044F
+      \u0438\u0437\u0443\u0447\u0435\u043D\u0438\u0435\u043C \u043A\u0440\u043E\u0442\u043E\u0432\u044C\u0438\u0445
+      \u043D\u043E\u0440 \u043F\u043E\u0432\u0441\u044E\u0434\u0443.\r\n"
+    - "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0447\u0430\u0441\u0442\u044C
+      \u0438\u0441\u0441\u043B\u0435\u0434\u0443\u0435\u043C\u044B\u0445 \u043E\u0431\u043B\u0430\u0441\u0442\u0435\u0439,
+      \u043A\u043E\u043D\u0435\u0447\u043D\u043E, \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442
+      \u0441\u043E\u0431\u043E\u0439 \u0441\u043C\u0435\u0440\u0442\u043E\u043D\u043E\u0441\u043D\u0443\u044E
+      \u043B\u043E\u0432\u0443\u0448\u043A\u0443, \u0432 \u043A\u043E\u0442\u043E\u0440\u043E\u0439
+      \u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0430\u044E\u0442 \u043F\u0440\u0438\u0432\u044B\u0447\u043D\u044B\u0435
+      \u0437\u0430\u043A\u043E\u043D\u044B \u0444\u0438\u0437\u0438\u043A\u0438,
+      \u043D\u043E \u0412\u044B \u0432\u0435\u0434\u044C \u0437\u043D\u0430\u043B\u0438,
+      \u043D\u0430 \u0447\u0442\u043E \u0448\u043B\u0438, \u043A\u043E\u0433\u0434\u0430
+      \u043F\u043E\u0434\u043F\u0438\u0441\u044B\u0432\u0430\u043B\u0438 \u043A\u043E\u043D\u0442\u0440\u0430\u043A\u0442.\r\n"
+    - "\u0412\u044B \u0432\u0435\u0434\u044C \u0447\u0438\u0442\u0430\u043B\u0438
+      \u043A\u043E\u043D\u0442\u0440\u0430\u043A\u0442, \u0430 \u043D\u0435 \u043F\u0440\u043E\u0441\u0442\u043E
+      \u0441\u043E\u0431\u043B\u0430\u0437\u043D\u0438\u043B\u0438\u0441\u044C \u043D\u0430
+      \u043E\u043F\u043B\u0430\u0442\u0443? \u0427\u0438\u0442\u0430\u043B\u0438
+      \u0436\u0435?..\r"
+  dialogueBoxAnim: {fileID: 0}
+  startBoxAnim: {fileID: 0}
