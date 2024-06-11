@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     //----------------------------------------------------
     private Rigidbody rb;
-    private GameObject cam;
+    private Camera cam;
     Vector3 input = new Vector3();
     Vector2 _mouseAbsolute, _smoothMouse, targetDirection, targetCharacterDirection;
     private float coyoteTimeCounter, jumpBufferCounter, startJumpTime, endJumpTime;
@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        cam = gameObject.transform.Find(cameraName).gameObject;
+        cam = Camera.main;
         currentSpeed = walkMoveSpeed;
         targetDirection = transform.localRotation.eulerAngles;
         targetCharacterDirection = transform.localRotation.eulerAngles;
