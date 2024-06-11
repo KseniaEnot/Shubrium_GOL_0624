@@ -2,24 +2,78 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractableStaff : MonoBehaviour, IInteractable {
 
     [SerializeField] private string interactText;
-    //временное решение (костыль)
-    //в дальнейшем нужно его в наследника запихнуть или порабоать с удалением после монолога
-    [SerializeField] private DialogueManager dialogueManager;
 
 
+    private StaffMode StaffMode= StaffMode.none;
+    private Transform interactor;
+    private Rigidbody rb;
+    private float range;
+    private bool Charging;
+    private float chargeTime;
     private void Awake() {
+        rb= gameObject.GetComponent<Rigidbody>();
+    }
+    private void FixedUpdate()
+    {
+        if(StaffMode == StaffMode.grabing)
+        {
+            if (interactor != null)
+            {
+                float lerpSpeed = 10f;
+                Vector3 newPos = Vector3.Lerp(transform.position, Camera.main.transform.position+ Camera.main.transform.forward* range, Time.deltaTime * lerpSpeed);
+                if (rb)
+                    rb.MovePosition(newPos);
+                else
+                    transform.position = newPos;
+            }
+            if (Input.GetKey(KeyCode.C))
+            {
+                Charging = true;
+                chargeTime += Time.deltaTime;
+            }
+            else if(Charging)
+            {
+                Throw();
+            }
+
+
+        }
     }
 
-    public void Interact(Transform interactorTransform) {
-        //ChatBubble3D.Create(transform.transform, new Vector3(-.3f, 1.7f, 0f), ChatBubble3D.IconType.Happy, "Hello there!");
-        Debug.Log("Hello there!");
-        //а сюда запихнуть вызов монологов:? или после интеракции запихнуть вызов монологов :? нужно подумать архитектурно... 
-        dialogueManager.StartDialogue();
+    private void Throw()
+    {
+        Drop();
+        rb.AddForce((Camera.main.transform.forward+Vector3.up/2) * chargeTime*300f);
+        chargeTime = 0;
+        Charging=false;
+    }
+
+    public void Interact(Transform interactorTransform)
+    {
+        if (StaffMode == StaffMode.none)
+            Pickup(interactorTransform);
+        else
+            Drop();
         //animator.SetTrigger("Talk");
+    }
+    private void Pickup(Transform interactorTransform)
+    {
+        if (rb)
+            rb.useGravity = false;
+        interactor = interactorTransform;
+        range = (interactor.position - transform.position).magnitude;
+        StaffMode = StaffMode.grabing;
+    }
+    private void Drop()
+    {
+        rb.useGravity = true;
+        interactor = null;
+        StaffMode = StaffMode.none;
     }
 
     public string GetInteractText() {
@@ -30,4 +84,9 @@ public class InteractableStaff : MonoBehaviour, IInteractable {
         return transform;
     }
 
+}
+enum StaffMode
+{
+    grabing,
+    none
 }

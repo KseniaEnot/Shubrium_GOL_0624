@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour {
     [SerializeField]
-    public KeyCode Interact = KeyCode.E;
+    public KeyCode InteractKey = KeyCode.E;
+    [SerializeField]
+    IInteractable interactable;
     private void Update() {
-        if (Input.GetKeyDown(Interact)) {
-            IInteractable interactable = GetInteractableObject();
+        if (Input.GetKeyDown(InteractKey)) {
+            if (this.interactable == null)
+                this.interactable = GetInteractableObject();
             if (interactable != null) {
                 interactable.Interact(transform);
             }
+            
         }
     }
 
