@@ -6,41 +6,35 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TMP_Text dialogueText;
+    //public TMP_Text dialogueText;
 
     public Dialogue dialogue;
-
-    public GameObject dialogueBox;
+    //канвас
+    //public GameObject dialogueBox;
+    private MonologueUI monologueUI;
 
     private Queue<string> sentences;
 
     public GameObject nextDialogue;
 
-    public bool isRunning;
-
-    public float dialogueUpdateCooldown = 1000;
-    private float untilNextDialogue;
-
-    public float dialogueStartDelay;
+    public bool isRunning = false;
+    
 
     private void Start()
     {
         sentences = new Queue<string>();
+        monologueUI = gameObject.GetComponent<MonologueUI>();
     }
 
     public void Update()
     {
         if (isRunning && gameObject.activeSelf)
         {
-
-            if (Input.GetKeyDown(KeyCode.Return) || untilNextDialogue <= 0)
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                dialogueBox.SetActive(true);
+                monologueUI.Show();
+                //dialogueBox.SetActive(true);
                 DisplayNextSentence();
-            }
-            if (untilNextDialogue > 0)
-            {
-                untilNextDialogue -= Time.deltaTime;
             }
         }
         
@@ -48,30 +42,33 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue()
     {
-        isRunning = true;
-
-        sentences.Clear();
-
-        foreach(string sentence in dialogue.sentences)
+        if (!isRunning)
         {
-            sentences.Enqueue(sentence);
+            isRunning = true;
+
+            sentences.Clear();
+            //включать монолог
+            foreach (string sentence in dialogue.sentences)
+            {
+                sentences.Enqueue(sentence);
+            }
         }
-        
-        untilNextDialogue = 0 + dialogueStartDelay;
     }
 
     public void DisplayNextSentence()
     {
-        untilNextDialogue = dialogueUpdateCooldown;
         if (sentences.Count == 0)
         {
             EndDialogue();
             return;
         }
         string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        // вывод текста сюда
+        monologueUI.Set_new_Sentence(sentence);
+        //StopAllCoroutines();
+        //StartCoroutine(TypeSentence(sentence));
     }
+    /* пережитки канваса
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
@@ -80,15 +77,17 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return null;
         }
-    }
+    }*/
     public void EndDialogue()
     {
-        dialogueBox.SetActive(false);
+        //dialogueBox.SetActive(false);
+        monologueUI.Hide();
         if (nextDialogue  != null)
         {
             nextDialogue.SetActive(true);
         }    
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         isRunning = false;
     }
+
 }
