@@ -1546,6 +1546,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928636919300218470, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 1531051753}
     - target: {fileID: 6318643937178302102, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
       propertyPath: m_Name
       value: Box
