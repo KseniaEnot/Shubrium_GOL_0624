@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class InteractableStaff : MonoBehaviour, IInteractable {
 
     [SerializeField] private string interactText;
-
-
     private StaffMode StaffMode= StaffMode.none;
     private Transform interactor;
     private Rigidbody rb;

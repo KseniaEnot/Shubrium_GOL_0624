@@ -1,8 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/asd.uss?fileID=7433441132597879392&amp;guid=c80717a498c6c0a4fbdb528ea8706c4e&amp;type=3#asd" />
     <ui:VisualElement name="root" style="flex-grow: 1; transition-property: opacity, ignored; transition-duration: 2s, 0s; transition-delay: 2s, 0s;">
         <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="top: 80%; bottom: auto; width: 60px; align-self: center; align-items: center; -unity-text-align: middle-center; background-image: url(&quot;project://database/Assets/_Sprites/Circle.png?fileID=21300000&amp;guid=a0e35f6b808bb7447826cc6c69ffe448&amp;type=3#Circle&quot;); height: 60px;" />
         <ui:VisualElement name="VisualElement" style="flex-grow: 1;" />
-        <ui:GroupBox class="qwewqe" />
     </ui:VisualElement>
 </ui:UXML>
