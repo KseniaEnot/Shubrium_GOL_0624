@@ -24,10 +24,6 @@ public class MonologueUI : MonoBehaviour, IInteractable
     {
         Debug.Log("Interact " + gameObject.name);
         dialogueManager.StartDialogue();
-        /*if (Input.GetKeyDown(KeyCode.Return))
-        {
-            dialogueManager.StartDialogue();
-        }*/
         return;
     }
     public string GetInteractText()

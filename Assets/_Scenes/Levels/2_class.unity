@@ -228,7 +228,7 @@ Transform:
   m_GameObject: {fileID: 109365551}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0029293823, y: -0.57290655, z: -0.0020476284, w: 0.8196129}
-  m_LocalPosition: {x: 0, y: 1.45, z: 0}
+  m_LocalPosition: {x: 0, y: 1.737, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -636,6 +636,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 239150541}
     m_Modifications:
+    - target: {fileID: 270955668540075087, guid: 1a2f097d2b2f8bf45b82705452587f75, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8555caf79461b754393408c3da786a32, type: 2}
     - target: {fileID: 1458306516157164996, guid: 1a2f097d2b2f8bf45b82705452587f75, type: 3}
       propertyPath: m_LocalScale.x
       value: 180
@@ -785,6 +789,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bagclassrom
       objectReference: {fileID: 0}
+    - target: {fileID: 9209936783193687983, guid: c3a86ac9696e9cf41b105f9d86566ea9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8555caf79461b754393408c3da786a32, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -825,7 +833,6 @@ MonoBehaviour:
       \u043C\u043E\u044E \u043D\u043E\u0448\u0443. \u041D\u0430\u0433\u0440\u0430\u0436\u0443
       \u0442\u0435\u0431\u044F \u043F\u0430\u0440\u043E\u0439 \u043D\u043E\u0432\u044B\u0445
       \u0437\u043D\u0430\u0447\u043A\u043E\u0432 \u043F\u043E\u0437\u0436\u0435."
-  nextDialogue: {fileID: 0}
   isRunning: 0
 --- !u!114 &190220795
 MonoBehaviour:
@@ -1737,7 +1744,6 @@ MonoBehaviour:
       \u043D\u0435 \u0445\u043E\u0447\u0435\u0442\u0441\u044F. \u041E\u043F\u044F\u0442\u044C
       \u043E\u0442\u0435\u0446 \u0431\u0443\u0434\u0435\u0442 \u043D\u0443\u0434\u0438\u0442\u044C,
       \u0447\u0442\u043E \u044F \u043F\u043B\u043E\u0445\u043E \u0443\u0447\u0443\u0441\u044C."
-  nextDialogue: {fileID: 0}
   isRunning: 0
 --- !u!1001 &637601934
 PrefabInstance:
@@ -3506,6 +3512,7 @@ GameObject:
   - component: {fileID: 1245718984}
   - component: {fileID: 1245718983}
   - component: {fileID: 1245718982}
+  - component: {fileID: 1245718990}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3526,6 +3533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractKey: 101
+  interactRange: 3
 --- !u!114 &1245718983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3538,11 +3546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ba3a9ad828f0e40a23605e87f8d40b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockCursor: 1
-  clampInDegrees: {x: 360, y: 180}
-  sensitivity: {x: 2, y: 2}
-  smoothing: {x: 1.5, y: 1.5}
-  cameraName: Camera
   walkMoveSpeed: 7.5
   sprintMoveSpeed: 11
   jumpMoveSpeed: 6
@@ -3563,7 +3566,6 @@ MonoBehaviour:
   jump: 32
   sprint: 304
   crouch: 122
-  lockToggle: 113
   areWeGrounded: 1
   areWeCrouching: 0
   currentSpeed: 0
@@ -3653,7 +3655,7 @@ Transform:
   m_GameObject: {fileID: 1245718981}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6, y: 1.583, z: 0.96}
+  m_LocalPosition: {x: 2.6, y: 1.755, z: 0.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3683,6 +3685,24 @@ CapsuleCollider:
   m_Height: 1.9013829
   m_Direction: 1
   m_Center: {x: 0, y: 0.45069146, z: 0}
+--- !u!114 &1245718990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245718981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ac11133f05dad4f9cd30d8a2cd5b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockCursor: 1
+  clampInDegrees: {x: 360, y: 180}
+  sensitivity: {x: 2, y: 2}
+  smoothing: {x: 1.5, y: 1.5}
+  cameraName: Camera
+  lockToggle: 113
 --- !u!1001 &1257670160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4825,6 +4845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chalkboardclassrom
       objectReference: {fileID: 0}
+    - target: {fileID: 7794427536460974047, guid: 81c39a0b5cecf2c41b114a0d7cd73d57, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8555caf79461b754393408c3da786a32, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4884,7 +4908,6 @@ MonoBehaviour:
       \u0433\u043B\u0443\u043F\u043E\u0441\u0442\u0438\xBB."
     - "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E
       \u043E\u0447\u0435\u043D\u044C \u0432\u0430\u0436\u043D\u044B\u0435 \u0432\u0435\u0449\u0438."
-  nextDialogue: {fileID: 0}
   isRunning: 0
 --- !u!1001 &1615892313
 PrefabInstance:
@@ -6128,7 +6151,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8cae662e83f00f64bb16abc965a853ce, type: 2}
+  - {fileID: 2100000, guid: 5ef23c26124cf224d82d61c13de1f864, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6202,7 +6225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &6640309026001210872
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6223,7 +6246,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8cae662e83f00f64bb16abc965a853ce, type: 2}
+  - {fileID: 2100000, guid: 5ef23c26124cf224d82d61c13de1f864, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
