@@ -1,87 +1,77 @@
 ﻿using UnityEngine;
-
-public class Ksilophone : MonoBehaviour, IInteractable
+public enum Nota
 {
-    AudioSource audioSource;
+    DO,
+    RE,
+    MI,
+    PHA,
+    SOL,
+    LYA,
+    SI
+}
+public class Ksilophone : SequenceController
+{
+    Clickable clickable;
     [SerializeField]
-    public nota Nota;
+    public AudioClip DO;
     [SerializeField]
-    AudioClip DO;
+    public AudioClip RE;
     [SerializeField]
-    AudioClip RE;
+    public AudioClip MI;
     [SerializeField]
-    AudioClip MI;
+    public AudioClip PHA;
     [SerializeField]
-    AudioClip PHA;
+    public AudioClip SOL;
     [SerializeField]
-    AudioClip SOL;
-    [SerializeField]
-    AudioClip LYA;
-    [SerializeField]
-    AudioClip SI;
-    public enum nota
+    public AudioClip LYA;
+    [SerializeField]   
+    public AudioClip SI;
+    
+    protected override void Awake()
     {
-        DO,
-        RE,
-        MI,
-        PHA,
-        SOL,
-        LYA,
-        SI
+        base.Awake();
+        clickable= GetComponent<Clickable>();   
     }
-    private void Awake()
+    public string GetNotaText(Nota nota)
     {
-        audioSource = GetComponent<AudioSource>();
-    }
-    public string GetInteractText()
-    {
-        switch (Nota)
+        switch (nota)
         {
-            case nota.DO:
+            case Nota.DO:
                 return "ДO";
-            case nota.RE:
+            case Nota.RE:
                 return "РE";
-            case nota.MI:
+            case Nota.MI:
                 return "МИ";
-            case nota.PHA:
+            case Nota.PHA:
                 return "ФА";
-            case nota.SOL:
+            case Nota.SOL:
                 return "СОЛЬ";
-             case nota.LYA:
+             case Nota.LYA:
                 return "ЛЯ";
-            case nota.SI :
+            case Nota.SI :
                 return "СИ";
         }
         return null;
     }
-
-    public Transform GetTransform()
+    public AudioClip GetNota(Nota nota)
     {
-        return transform;
-    }
-    private AudioClip GetNota()
-    {
-        switch (Nota)
+        switch (nota)
         {
-            case nota.DO:
+            case Nota.DO:
                 return DO;
-            case nota.RE:
+            case Nota.RE:
                 return RE;
-            case nota.MI:
+            case Nota.MI:
                 return MI;
-            case nota.PHA:
+            case Nota.PHA:
                 return PHA;
-            case nota.SOL:
+            case Nota.SOL:
                 return SOL;
-            case nota.LYA:
+            case Nota.LYA:
                 return LYA;
-            case nota.SI:
+            case Nota.SI:
                 return SI;
         }
         return null;
-    }    
-    public void Interact(Transform interactorTransform)
-    {
-        audioSource.PlayOneShot(GetNota());
-    }
+    }  
 }
