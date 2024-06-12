@@ -7,12 +7,16 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
-public class Clickable : MonoBehaviour
+public class Clickable : MonoBehaviour, IInteractable
 {
+
+    [SerializeField]
+    public Ksilophone Owner;
+    [SerializeField]    
+    public Nota Nota;
     public int SceneID;
     public string Name;
-    [SerializeField]
-    public AudioClip Sound;
+    private AudioClip Sound;
     [HideInInspector]
     public bool clickAvailable;
     private Button button;
@@ -24,11 +28,15 @@ public class Clickable : MonoBehaviour
     [SerializeField]
     private Sprite NoOutlineSprite;
     private SpriteRenderer spriteRenderer; 
-
     private void Start()
     {
         AudioSource = GetComponent<AudioSource>();   
         SetOutlineMode(true);
+        Sound = Owner.GetNota(Nota);
+    }
+    public float GetSoundLength()
+    {
+        return Sound.length;    
     }
     private void Awake()
     {
@@ -45,6 +53,7 @@ public class Clickable : MonoBehaviour
     {
         if (clickAvailable)
         {
+            Owner.OnClickableClick(this);
             Play();
         }
     }
@@ -66,5 +75,20 @@ public class Clickable : MonoBehaviour
     private void HideOutline()
     {
         spriteRenderer.sprite = NoOutlineSprite;
+    }
+
+    public void Interact(Transform interactorTransform)
+    {
+        Click();
+    }
+
+    public string GetInteractText()
+    {
+       return Owner.GetNotaText(Nota);
+    }
+
+    public Transform GetTransform()
+    {
+        return transform;
     }
 }
