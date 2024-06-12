@@ -2,21 +2,9 @@
 
 // By B0N3head 
 // All yours, use this script however you see fit, feel free to give credit if you want
-[AddComponentMenu("Player Movement and Camera Controller")]
+[AddComponentMenu("Player Movement")]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Camera Settings")]
-    [Tooltip("Lock the cursor to the game screen on play")]
-    public bool lockCursor = true;
-    [Tooltip("Clamp the camera angle (Stop the camera form \"snapping its neck\")")]
-    public Vector2 clampInDegrees = new Vector2(360f, 180f);
-    [Tooltip("The mouse sensitivity, both x and y")]
-    public Vector2 sensitivity = new Vector2(2f, 2f);
-    [Tooltip("Smoothing of the mouse movement (Try with and without)")]
-    public Vector2 smoothing = new Vector2(1.5f, 1.5f);
-    [Tooltip("Needs to be the same name as your main cam")]
-    public string cameraName = "Camera";
-
     //----------------------------------------------------
     [Space]
     [Header("Movement Settings")]
@@ -74,8 +62,6 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode sprint = KeyCode.LeftShift;
     [Tooltip("The key used to crouch")]
     public KeyCode crouch = KeyCode.Z;
-    [Tooltip("The key used to toggle the cursor")]
-    public KeyCode lockToggle = KeyCode.Q;
 
     //----------------------------------------------------
     [Space]
@@ -87,78 +73,31 @@ public class PlayerMovement : MonoBehaviour
     public bool areWeCrouching = false;
     [Tooltip("The current speed I should be moving at")]
     public float currentSpeed;
-
     //----------------------------------------------------
     private Rigidbody rb;
-    private Camera cam;
     Vector3 input = new Vector3();
-    Vector2 _mouseAbsolute, _smoothMouse, targetDirection, targetCharacterDirection;
     private float coyoteTimeCounter, jumpBufferCounter, startJumpTime, endJumpTime;
     private bool wantingToJump = false, wantingToCrouch = false, wantingToSprint = false, jumpCooldownOver = true;
 
     void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        cam = Camera.main;
         currentSpeed = walkMoveSpeed;
-        targetDirection = transform.localRotation.eulerAngles;
-        targetCharacterDirection = transform.localRotation.eulerAngles;
     }
 
     private void Update()
     {
-        cameraUpdate();
-
-
         input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         wantingToJump = Input.GetKey(jump);
         wantingToCrouch = Input.GetKey(crouch);
         wantingToSprint = Input.GetKey(sprint);
 
-        if (Input.GetKeyDown(lockToggle))
-            lockCursor = !lockCursor;
     }
 
-    public void cameraUpdate()
-    {
-        // Allow the script to clamp based on a desired target value.
-        var targetOrientation = Quaternion.Euler(targetDirection);
-        var targetCharacterOrientation = Quaternion.Euler(targetCharacterDirection);
-
-        // Get raw mouse input for a cleaner reading on more sensitive mice.
-        var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-
-        // Scale input against the sensitivity setting and multiply that against the smoothing value.
-        mouseDelta = Vector2.Scale(mouseDelta, new Vector2(sensitivity.x * smoothing.x, sensitivity.y * smoothing.y));
-
-        // Interpolate mouse movement over time to apply smoothing delta.
-        _smoothMouse.x = Mathf.Lerp(_smoothMouse.x, mouseDelta.x, 1f / smoothing.x);
-        _smoothMouse.y = Mathf.Lerp(_smoothMouse.y, mouseDelta.y, 1f / smoothing.y);
-
-        // Find the absolute mouse movement value from point zero.
-        _mouseAbsolute += _smoothMouse;
-
-        // Clamp and apply the local x value first, so as not to be affected by world transforms.
-        if (clampInDegrees.x < 360)
-            _mouseAbsolute.x = Mathf.Clamp(_mouseAbsolute.x, -clampInDegrees.x * 0.5f, clampInDegrees.x * 0.5f);
-
-        // Then clamp and apply the global y value.
-        if (clampInDegrees.y < 360)
-            _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, -clampInDegrees.y * 0.5f, clampInDegrees.y * 0.5f);
-
-        cam.transform.localRotation = Quaternion.AngleAxis(-_mouseAbsolute.y, targetOrientation * Vector3.right) * targetOrientation;
-
-        var yRotation = Quaternion.AngleAxis(_mouseAbsolute.x, Vector3.up);
-        transform.localRotation = yRotation * targetCharacterOrientation;
-    }
-
+   
     void FixedUpdate()
     {
-        // Lock cursor handling
-        if (lockCursor)
-            Cursor.lockState = CursorLockMode.Locked;
-        else
-            Cursor.lockState = CursorLockMode.None;
+        
 
         // Double check if we are on the ground or not (Changes current speed if true)
         // --- QUICK EXPLINATION --- 
