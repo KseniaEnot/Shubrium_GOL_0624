@@ -65,6 +65,7 @@ public class InteractableStaff : MonoBehaviour, IInteractable {
     {
         if (rb)
             rb.useGravity = false;
+        //поворот тоже отклбчать надо, а то его колбасит жутко
         interactor = interactorTransform;
         range = (interactor.position - transform.position).magnitude;
         StaffMode = StaffMode.grabing;
