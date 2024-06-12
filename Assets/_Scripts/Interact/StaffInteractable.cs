@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
-public class InteractableStaff : MonoBehaviour, IInteractable {
+public class StaffInteractable : MonoBehaviour, IInteractable {
 
-    [SerializeField] private string interactText;
-    private StaffMode StaffMode= StaffMode.none;
+    [SerializeField]
+    private string interactText;
+    [SerializeField]
+    private float RotationSpeed=3f;
+    public StaffMode StaffModeNow= StaffMode.none;
     private Transform interactor;
     private Rigidbody rb;
     private float range;
@@ -18,7 +22,7 @@ public class InteractableStaff : MonoBehaviour, IInteractable {
     }
     private void FixedUpdate()
     {
-        if(StaffMode == StaffMode.grabing)
+        if(StaffModeNow == StaffMode.grabing)
         {
             if (interactor != null)
             {
@@ -29,7 +33,7 @@ public class InteractableStaff : MonoBehaviour, IInteractable {
                 else
                     transform.position = newPos;
             }
-            if (Input.GetKey(KeyCode.C))
+            if (Input.GetKey(KeyCode.V))
             {
                 Charging = true;
                 chargeTime += Time.deltaTime;
@@ -38,9 +42,24 @@ public class InteractableStaff : MonoBehaviour, IInteractable {
             {
                 Throw();
             }
-
-
+            if (Input.GetKey(KeyCode.X))
+                transform.Rotate(new Vector3(1f, 0f), Space.World);
+            if (Input.GetKey(KeyCode.Z))
+                transform.Rotate(new Vector3(0f, 0f, 1f) , Space.World);
+            if (Input.GetKey(KeyCode.C))
+                transform.Rotate(new Vector3(0f, 1f, 0f) , Space.World);
         }
+    }
+
+    private void Rotate()
+    {
+        if(Input.GetKey(KeyCode.X))
+            transform.Rotate(new Vector3(1f, 0f) * Time.deltaTime, Space.World);
+        if(Input.GetKey(KeyCode.Z))
+            transform.Rotate(new Vector3(0f, 0f,1f) * Time.deltaTime, Space.World);
+        if( Input.GetKey(KeyCode.C))
+            transform.Rotate(new Vector3(0f, 1f, 0f) * Time.deltaTime, Space.World);
+
     }
 
     private void Throw()
@@ -53,7 +72,7 @@ public class InteractableStaff : MonoBehaviour, IInteractable {
 
     public void Interact(Transform interactorTransform)
     {
-        if (StaffMode == StaffMode.none)
+        if (StaffModeNow == StaffMode.none)
             Pickup(interactorTransform);
         else
             Drop();
@@ -63,16 +82,16 @@ public class InteractableStaff : MonoBehaviour, IInteractable {
     {
         if (rb)
             rb.useGravity = false;
-        //поворот тоже отклбчать надо, а то его колбасит жутко
+        //поворот тоже отклбчать надо, а то его колбасит жутко кто сказал?? так и надо!!!!! в следующий раз я точно не замечу комментарий
         interactor = interactorTransform;
         range = (interactor.position - transform.position).magnitude;
-        StaffMode = StaffMode.grabing;
+        StaffModeNow = StaffMode.grabing;
     }
     private void Drop()
     {
         rb.useGravity = true;
         interactor = null;
-        StaffMode = StaffMode.none;
+        StaffModeNow = StaffMode.none;
     }
 
     public string GetInteractText() {
@@ -84,7 +103,7 @@ public class InteractableStaff : MonoBehaviour, IInteractable {
     }
 
 }
-enum StaffMode
+public enum StaffMode
 {
     grabing,
     none

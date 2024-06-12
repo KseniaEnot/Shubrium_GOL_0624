@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinemachine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,9 @@ namespace Assets._Scripts.Movement
         [Tooltip("Needs to be the same name as your main cam")]
         public string cameraName = "Camera";
 
-        private Camera cam;
+        private Camera cam2;
+        [SerializeField]
+        private CinemachineVirtualCamera cam;
         Vector2 _mouseAbsolute, _smoothMouse;
         Vector2 targetDirection, targetCharacterDirection;
 
@@ -29,7 +32,7 @@ namespace Assets._Scripts.Movement
         public KeyCode lockToggle = KeyCode.Q;
         public void Awake()
         {
-            cam = Camera.main;
+            cam2 = Camera.main;
             targetDirection = transform.localRotation.eulerAngles;
             targetCharacterDirection = transform.localRotation.eulerAngles;
         }
@@ -81,7 +84,7 @@ namespace Assets._Scripts.Movement
         }
         public void ResetPos()
         {
-            Camera.main.transform.localPosition = new Vector3();
+            cam2.transform.localPosition = new Vector3();
         }
 
     }

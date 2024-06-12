@@ -15,8 +15,8 @@ public class SequenceController : MonoBehaviour
     public GameMode gameMode;
     [SerializeField]
     public int ScoreToWin;
-    public Clickable[] ClickableObjects;
-    public List<Clickable> ClickableSequence;
+    public KsilophoneButtonInteractable[] ClickableObjects;
+    public List<KsilophoneButtonInteractable> ClickableSequence;
     [HideInInspector]
     protected AudioSource audioSource;
     public AudioClip loseSound;
@@ -50,7 +50,7 @@ public class SequenceController : MonoBehaviour
     protected virtual void Awake()
     {
     }
-    public void SetUpGame(Clickable[] AvailableCats, int StartedSequenceLength)
+    public void SetUpGame(KsilophoneButtonInteractable[] AvailableCats, int StartedSequenceLength)
     {
         this.ClickableObjects = AvailableCats;
         this.StartedSequenceLength = StartedSequenceLength;
@@ -79,7 +79,7 @@ public class SequenceController : MonoBehaviour
     private void AddToSequence()
     {
         int num = UnityEngine.Random.Range(0, ClickableObjects.Length);
-        Clickable clickable = ClickableObjects[num];
+        KsilophoneButtonInteractable clickable = ClickableObjects[num];
         ClickableSequence.Add(clickable);
     }
     private void SetRoundState(RoundState state)
@@ -100,12 +100,12 @@ public class SequenceController : MonoBehaviour
         SetRoundState(roundState = RoundState.roundStarting);
         SetCatsClickable(true);
     }
-    public void OnClickableClick(Clickable clickable)
+    public void OnClickableClick(KsilophoneButtonInteractable clickable)
     {
         QueueCheck(clickable);
     }
     
-    private void QueueCheck(Clickable cat)
+    private void QueueCheck(KsilophoneButtonInteractable cat)
     {
         if (CurrentNum== ClickableSequence.Count) return;
         if(CurrentNum > 0 && roundState != RoundState.playing)

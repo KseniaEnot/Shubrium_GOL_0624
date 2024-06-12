@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
-public class Clickable : MonoBehaviour, IInteractable
+public class KsilophoneButtonInteractable : MonoBehaviour, IInteractable
 {
 
     [SerializeField]
@@ -21,7 +21,7 @@ public class Clickable : MonoBehaviour, IInteractable
     public bool clickAvailable;
     private Button button;
     private AudioSource AudioSource;
-    public UnityEvent<Clickable> Clicked;
+    public UnityEvent<KsilophoneButtonInteractable> Clicked;
     public bool OutlineEnabled;
     [SerializeField]
     private Sprite OutlineSprite;
