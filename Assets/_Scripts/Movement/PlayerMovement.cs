@@ -50,7 +50,9 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Fall quicker")]
     public float extraGravity = 0.1f;
     [Tooltip("The tag that will be considered the ground")]
-    public string groundTag = "Ground";
+    public LayerMask groundLayer;
+    [SerializeField]
+    public float GroundCheckRange;
 
     //----------------------------------------------------
     [Space]
@@ -91,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         wantingToJump = Input.GetKey(jump);
         wantingToCrouch = Input.GetKey(crouch);
         wantingToSprint = Input.GetKey(sprint);
-
+            
     }
 
    
@@ -105,8 +107,10 @@ public class PlayerMovement : MonoBehaviour
         // This puts the start of the ray 0.1f above the bottom of the player
         // We then shoot a ray 0.15f down, this exists the player with 0.5f to hit objects
         // Removing this +- of 0.1f and having it shoot directly under the player can skip the ground as sometimes the capsules bottom clips through the ground
-        if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y - transform.localScale.y + 0.1f, transform.position.z), Vector3.down, 0.15f))
+        if ( Physics.Raycast(transform.position, Vector3.down, GroundCheckRange, groundLayer))
             handleHitGround();
+        else
+            areWeGrounded = false;
 
         // Sprinting
         if (wantingToSprint && areWeGrounded && !areWeCrouching)
@@ -142,7 +146,6 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
 
             jumpCooldownOver = false;
-            areWeGrounded = false;
             jumpBufferCounter = 0f;
             currentSpeed = jumpMoveSpeed;
             endJumpTime = Time.time + jumpTime;
@@ -210,11 +213,11 @@ public class PlayerMovement : MonoBehaviour
 
     // Ground check
     //****** make sure whatever you want to be the ground in your game matches the tag set in the script
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == groundTag)
-            handleHitGround();
-    }
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.tag == groundTag)
+    //        handleHitGround();
+    //}
 
     // This is separated in its own void as this code needs to be run on two separate occasions, saves copy pasting code
     // Just double checking if we are crouching and setting the speed accordingly 
@@ -228,8 +231,8 @@ public class PlayerMovement : MonoBehaviour
         areWeGrounded = true;
     }
 
-    // Dw about understanding this, it's just the code for setting up the player character 
-    public void setupCharacter()
+// Dw about understanding this, it's just the code for setting up the player character 
+public void setupCharacter()
     {
         gameObject.tag = "Player";
         if (!gameObject.GetComponent<Rigidbody>())
