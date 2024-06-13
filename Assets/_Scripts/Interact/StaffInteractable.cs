@@ -15,8 +15,6 @@ public class StaffInteractable : MonoBehaviour, IInteractable {
     private Transform interactor;
     private Rigidbody rb;
     private float range;
-    private bool Charging;
-    private float chargeTime;
     private void Awake() {
         rb= gameObject.GetComponent<Rigidbody>();
     }
@@ -33,15 +31,7 @@ public class StaffInteractable : MonoBehaviour, IInteractable {
                 else
                     transform.position = newPos;
             }
-            if (Input.GetKey(KeyCode.V))
-            {
-                Charging = true;
-                chargeTime += Time.deltaTime;
-            }
-            else if(Charging)
-            {
-                Throw();
-            }
+            
             if (Input.GetKey(KeyCode.X))
                 transform.Rotate(new Vector3(1f, 0f), Space.World);
             if (Input.GetKey(KeyCode.Z))
@@ -61,15 +51,6 @@ public class StaffInteractable : MonoBehaviour, IInteractable {
             transform.Rotate(new Vector3(0f, 1f, 0f) * Time.deltaTime, Space.World);
 
     }
-
-    private void Throw()
-    {
-        Drop();
-        rb.AddForce((Camera.main.transform.forward+Vector3.up/2) * chargeTime*300f);
-        chargeTime = 0;
-        Charging=false;
-    }
-
     public void Interact(Transform interactorTransform)
     {
         if (StaffModeNow == StaffMode.none)
@@ -77,6 +58,11 @@ public class StaffInteractable : MonoBehaviour, IInteractable {
         else
             Drop();
         //animator.SetTrigger("Talk");
+    }
+    public void Throw(float force)
+    {
+        Drop();
+        rb.AddForce((Camera.main.transform.forward + Vector3.up / 2) * force * 300f);
     }
     private void Pickup(Transform interactorTransform)
     {
@@ -87,7 +73,7 @@ public class StaffInteractable : MonoBehaviour, IInteractable {
         range = (interactor.position - transform.position).magnitude;
         StaffModeNow = StaffMode.grabing;
     }
-    private void Drop()
+    public void Drop()
     {
         rb.useGravity = true;
         interactor = null;

@@ -336,10 +336,15 @@ MonoBehaviour:
   jumpBuffer: 0.1
   jumpCooldown: 0.6
   extraGravity: 0.1
-  groundTag: Ground
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  GroundCheckRange: 0
   jump: 32
   sprint: 304
   crouch: 122
+  outlineKey: 113
+  DrawOutlineRange: 0
   areWeGrounded: 1
   areWeCrouching: 0
   currentSpeed: 0
@@ -358,7 +363,7 @@ MonoBehaviour:
   InteractKey: 101
   interactRange: 3
   HoldingObj: {fileID: 0}
-  RayMethod: 0
+  RayMethod: 1
 --- !u!114 &929274592141787702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +382,6 @@ MonoBehaviour:
   smoothing: {x: 1.5, y: 1.5}
   cameraName: Camera
   cam: {fileID: 6975990888520695598}
-  lockToggle: 113
 --- !u!1 &4610794999871644056
 GameObject:
   m_ObjectHideFlags: 0

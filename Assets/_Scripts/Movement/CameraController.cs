@@ -28,8 +28,6 @@ namespace Assets._Scripts.Movement
         Vector2 _mouseAbsolute, _smoothMouse;
         Vector2 targetDirection, targetCharacterDirection;
 
-        [Tooltip("The key used to toggle the cursor")]
-        public KeyCode lockToggle = KeyCode.Q;
         public void Awake()
         {
             cam2 = Camera.main;
@@ -38,8 +36,6 @@ namespace Assets._Scripts.Movement
         }
         private void Update()
         {
-            if (Input.GetKeyDown(lockToggle))
-                lockCursor = !lockCursor;
             cameraUpdate();
         }
         void FixedUpdate()

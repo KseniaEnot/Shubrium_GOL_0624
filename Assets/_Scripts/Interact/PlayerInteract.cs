@@ -9,31 +9,53 @@ public class PlayerInteract : MonoBehaviour {
     [SerializeField]
     public KeyCode InteractKey = KeyCode.E;
     [SerializeField]
+    public KeyCode ThrowKey = KeyCode.V;
+    [SerializeField]
     float interactRange = 3f;
     public StaffInteractable HoldingObj;
     [SerializeField]
     private bool RayMethod;
+    private bool Charging;
+    private float chargeTime;
     private void Update()
     {
-        if (Input.GetKeyDown(InteractKey))
+        if (Input.GetKey(ThrowKey))
         {
+            if (HoldingObj != null)
             {
-                if (HoldingObj != null)
-                {
-                    HoldingObj.Interact(transform);
-                    HoldingObj = null;
-                    return;
-                }
-                IInteractable interactable = GetInteractableObject();
-                if (interactable != null)
-                {
-                    interactable.Interact(transform);
-                    if (interactable is StaffInteractable) HoldingObj = (StaffInteractable)interactable;
-                }
+                Charging = true;
+                chargeTime += Time.deltaTime;
             }
+        }
+        else if (Charging && HoldingObj != null)
+        {
+            HoldingObj.Throw(chargeTime);
+            chargeTime = 0;
+            Charging = false;
+            Drop();
 
         }
+        if (Input.GetKeyDown(InteractKey))
+        {
+            if (HoldingObj != null)
+            {
+                HoldingObj.Interact(transform);
+                Drop();
+                return;
+            }
+            IInteractable interactable = GetInteractableObject();
+            if (interactable != null)
+            {
+                interactable.Interact(transform);
+                if (interactable is StaffInteractable) HoldingObj = (StaffInteractable)interactable;
+            }
+        }
     }
+    private void Drop()
+    {
+        HoldingObj = null;
+    }
+
     public IInteractable GetInteractableObject()
     {
         {
