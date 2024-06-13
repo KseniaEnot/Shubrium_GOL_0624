@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 // By B0N3head 
 // All yours, use this script however you see fit, feel free to give credit if you want
@@ -64,7 +65,11 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode sprint = KeyCode.LeftShift;
     [Tooltip("The key used to crouch")]
     public KeyCode crouch = KeyCode.Z;
-
+    [Space]
+    [Header("Outline Settings")]
+    [Tooltip("The key used to Outline")]
+    public KeyCode outlineKey = KeyCode.Q;
+    public float DrawOutlineRange;
     //----------------------------------------------------
     [Space]
     [Header("Debug Info")]
@@ -79,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     Vector3 input = new Vector3();
     private float coyoteTimeCounter, jumpBufferCounter, startJumpTime, endJumpTime;
-    private bool wantingToJump = false, wantingToCrouch = false, wantingToSprint = false, jumpCooldownOver = true;
+    private bool wantingToJump = false, wantingToCrouch = false, wantingToSprint = false, jumpCooldownOver = true, waitingToDrawOutline=false;
 
     void Awake()
     {
@@ -93,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
         wantingToJump = Input.GetKey(jump);
         wantingToCrouch = Input.GetKey(crouch);
         wantingToSprint = Input.GetKey(sprint);
-            
+        waitingToDrawOutline = Input.GetKey(outlineKey);
     }
 
    
@@ -167,6 +172,26 @@ public class PlayerMovement : MonoBehaviour
 
         //Extra gravity for more nicer jumping
         rb.AddForce(new Vector3(0, -extraGravity, 0), ForceMode.Impulse);
+
+        if(waitingToDrawOutline)
+        {
+           Debug.Log("DrawingOutline");
+           DrawOutline();
+        }
+    }
+
+    private void DrawOutline()
+    {
+        Collider[] colliderArray = Physics.OverlapSphere(transform.position, DrawOutlineRange);
+        foreach (Collider collider in colliderArray)
+        {
+            Outline2 outline = collider.GetComponent<Outline2>();
+            if (outline != null)
+            {
+                outline.PlayOutlineAnimation();
+            }
+        }
+
     }
 
     private void jumpCoolDownCountdown()

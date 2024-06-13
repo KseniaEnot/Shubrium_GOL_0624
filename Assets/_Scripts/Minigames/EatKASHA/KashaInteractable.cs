@@ -3,7 +3,7 @@ using Assets._Scripts.Movement;
 using Cinemachine;
 using System.Collections;
 using UnityEngine;
-
+[RequireComponent(typeof(KashaGame))]
 public class KashaInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField]
@@ -42,7 +42,7 @@ public class KashaInteractable : MonoBehaviour, IInteractable
         KashaGame.StartGame();
         gameObject.GetComponent<Collider>().enabled = false;
 
-        KashaGame.GameStopped.AddListener(() => {
+        KashaGame.GameStoped.AddListener(() => {
             StartCoroutine(OnGameStop());
         });
     }

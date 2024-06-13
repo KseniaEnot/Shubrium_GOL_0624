@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets._Scripts.Minigames.TowerGame
 {
-    internal class TowerCube : StaffInteractable
+    internal class GameZoneObjInteractable : StaffInteractable
     {
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 namespace Assets._Scripts.Minigames.EatKASHA
 {
-    public class KashaItem : MonoBehaviour, IInteractable
+    public class KashaItemInteractable : MonoBehaviour, IInteractable
     {
         [SerializeField]
         public string Text;

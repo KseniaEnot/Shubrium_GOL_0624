@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class SequenceController : MonoBehaviour
+public class SequenceController : MiniGame
 {
     [SerializeField]
     public int StartedSequenceLength;
@@ -50,18 +50,29 @@ public class SequenceController : MonoBehaviour
     protected virtual void Awake()
     {
     }
+    public new  void StartGame()
+    {
+        base.StartGame();
+        StartNewGame();
+        GameProgressChanged.Invoke(CurrentNum,ScoreToWin);
+    }
+    private new void StopGame()
+    {
+        base.StopGame();    
+        SetCatsClickable(false);
+    }
     public void SetUpGame(KsilophoneButtonInteractable[] AvailableCats, int StartedSequenceLength)
     {
         this.ClickableObjects = AvailableCats;
         this.StartedSequenceLength = StartedSequenceLength;
     }
-    public void StartNewGame()
+    private void StartNewGame()
     {
         ScoreManager.ResetPoints();
         CreateSequence(StartedSequenceLength);
         StartRound();
     }
-    public void StartRound()
+    private void StartRound()
     {
         SetRoundState(RoundState.roundStarting);
         CurrentNum = 0;
@@ -125,6 +136,7 @@ public class SequenceController : MonoBehaviour
     }
     private IEnumerator OnRoundWin()
     {
+        GameProgressChanged.Invoke(CurrentNum, ScoreToWin);
         ScoreManager.Set(ClickableSequence.Count);
         audioSource.PlayOneShot(winSound);
         if(PlayFullWinSound)
@@ -135,12 +147,13 @@ public class SequenceController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         if (gameMode == GameMode.byScore && ScoreManager.Score == ScoreToWin)
-            Debug.Log("GameWon! Exiting...");
+        { Win(); }
         AddToSequence();
         StartRound();
     }
     private void OnWrongAnswer()
     {
+        GameProgressChanged.Invoke(0, ScoreToWin);
         CurrentNum = 0;
         audioSource.PlayOneShot(loseSound);
         SetCatsClickable(false);

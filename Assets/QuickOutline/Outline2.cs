@@ -7,8 +7,10 @@
 //
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -306,4 +308,22 @@ public class Outline2 : MonoBehaviour {
         break;
     }
   }
+
+    internal void PlayOutlineAnimation()
+    {
+        StartCoroutine(OutlineAnimation());
+    }
+
+    private IEnumerator OutlineAnimation()
+    {
+        OutlineMode = Mode.OutlineVisible;
+        yield return new WaitForEndOfFrame();
+        OutlineWidth = Mathf.Lerp(2, 10, 1f);
+        yield return new WaitForSeconds(1);
+        OutlineWidth = Mathf.Lerp(10, 2, 1f);
+        yield return new WaitForSeconds(1);
+        OutlineWidth = Mathf.Lerp(2, 10, 1f);
+        yield return new WaitForSeconds(1);
+        OutlineMode = Mode.OutlineHidden;
+    }
 }
