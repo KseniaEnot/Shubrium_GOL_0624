@@ -15,6 +15,8 @@ public class Corsina : MonoBehaviour
         if (other.gameObject.GetComponent<IInteractable>() != null)
         {
             m_AudioSource.Play();
+            //отключенеи возможности вытащить из корзины
+            //засчитать задание
         }
 
     }

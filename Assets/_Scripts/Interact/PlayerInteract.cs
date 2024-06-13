@@ -13,8 +13,10 @@ public class PlayerInteract : MonoBehaviour {
     public StaffInteractable HoldingObj;
     [SerializeField]
     private bool RayMethod;
+    private Outline2 _lastObj;
     private void Update()
     {
+        setOutline();
         if (Input.GetKeyDown(InteractKey))
         {
             {
@@ -58,6 +60,33 @@ public class PlayerInteract : MonoBehaviour {
             return Interactable;
         }
     }
+    
+    private void setOutline()
+    {
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+        RaycastHit hit;
+
+        // Check if the ray hits anything
+        if (Physics.Raycast(ray, out hit, interactRange))
+        {
+            if (hit.collider.gameObject.GetComponent<Outline2>() != null)
+            {
+                if (_lastObj != null)
+                {
+                    _lastObj.enabled = false;
+                }
+                _lastObj = hit.collider.gameObject.GetComponent<Outline2>();
+                _lastObj.enabled = true;
+
+            }
+            else if (_lastObj != null)
+            {
+                _lastObj.enabled = false;
+                _lastObj = null;
+            }
+        }
+    }
+
     private IInteractable GetRayInteractable()
     {
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
