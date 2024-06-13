@@ -11,7 +11,6 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
-
     public bool isRunning = false;
     
 
@@ -68,4 +67,10 @@ public class DialogueManager : MonoBehaviour
         isRunning = false;
     }
 
+
+    public void OnTriggerEnter(Collider other)
+    {
+        StartDialogue();
+        gameObject.GetComponent<Collider>().enabled = false;
+    }
 }

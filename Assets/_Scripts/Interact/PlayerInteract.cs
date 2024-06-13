@@ -110,6 +110,11 @@ public class PlayerInteract : MonoBehaviour {
                 _lastObj = null;
             }
         }
+        else if (_lastObj != null)
+        {
+            _lastObj.enabled = false;
+            _lastObj = null;
+        }
     }
 
     private IInteractable GetRayInteractable()
@@ -118,8 +123,8 @@ public class PlayerInteract : MonoBehaviour {
         RaycastHit hit;
 
         // Check if the ray hits anything
-        if (Physics.Raycast(ray, out hit,interactRange))
-        {
+        if (Physics.Raycast(ray, out hit, interactRange)) { 
+
             IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
                 return interactable;
         }

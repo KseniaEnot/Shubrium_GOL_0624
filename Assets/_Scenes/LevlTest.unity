@@ -674,71 +674,6 @@ Transform:
   - {fileID: 1305812709}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &964854388
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2566773954769603008, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: playerInteract
-      value: 
-      objectReference: {fileID: 1060341611}
-    - target: {fileID: 2566773954769603008, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: containerGameObject
-      value: 
-      objectReference: {fileID: 1542586718}
-    - target: {fileID: 2676174437476672901, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676174437476672901, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676174437476672901, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.6202493
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676174437476672901, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676174437476672901, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676174437476672901, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676174437476672901, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676174437476672901, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676174437476672901, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676174437476672901, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6318643937178302102, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
-      propertyPath: m_Name
-      value: Box
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0092fdaa1ecfad7498021f5080809e97, type: 3}
 --- !u!1 &1060341610
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +709,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractKey: 101
+  ThrowKey: 118
+  interactRange: 3
+  HoldingObj: {fileID: 0}
+  RayMethod: 0
 --- !u!114 &1060341612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,11 +725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ba3a9ad828f0e40a23605e87f8d40b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockCursor: 1
-  clampInDegrees: {x: 360, y: 180}
-  sensitivity: {x: 2, y: 2}
-  smoothing: {x: 1.5, y: 1.5}
-  cameraName: Camera
   walkMoveSpeed: 7.5
   sprintMoveSpeed: 11
   jumpMoveSpeed: 6
@@ -807,11 +741,15 @@ MonoBehaviour:
   jumpBuffer: 0.1
   jumpCooldown: 0.6
   extraGravity: 0.1
-  groundTag: Ground
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  GroundCheckRange: 0
   jump: 32
   sprint: 304
   crouch: 122
-  lockToggle: 113
+  outlineKey: 113
+  DrawOutlineRange: 0
   areWeGrounded: 1
   areWeCrouching: 0
   currentSpeed: 0
@@ -4446,5 +4384,4 @@ SceneRoots:
   - {fileID: 1060341617}
   - {fileID: 329907867}
   - {fileID: 1138895950}
-  - {fileID: 964854388}
   - {fileID: 8200177283650415314}
