@@ -22,36 +22,37 @@ public class PlayerInteract : MonoBehaviour {
     {
         setOutline();
         if (Input.GetKeyDown(InteractKey))
-    {
-        if (Input.GetKey(ThrowKey))
         {
-            if (HoldingObj != null)
+            if (Input.GetKey(ThrowKey))
             {
-                Charging = true;
-                chargeTime += Time.deltaTime;
+                if (HoldingObj != null)
+                {
+                    Charging = true;
+                    chargeTime += Time.deltaTime;
+                }
             }
-        }
-        else if (Charging && HoldingObj != null)
-        {
-            HoldingObj.Throw(chargeTime);
-            chargeTime = 0;
-            Charging = false;
-            Drop();
-
-        }
-        if (Input.GetKeyDown(InteractKey))
-        {
-            if (HoldingObj != null)
+            else if (Charging && HoldingObj != null)
             {
-                HoldingObj.Interact(transform);
+                HoldingObj.Throw(chargeTime);
+                chargeTime = 0;
+                Charging = false;
                 Drop();
-                return;
+
             }
-            IInteractable interactable = GetInteractableObject();
-            if (interactable != null)
+            if (Input.GetKeyDown(InteractKey))
             {
-                interactable.Interact(transform);
-                if (interactable is StaffInteractable) HoldingObj = (StaffInteractable)interactable;
+                if (HoldingObj != null)
+                {
+                    HoldingObj.Interact(transform);
+                    Drop();
+                    return;
+                }
+                IInteractable interactable = GetInteractableObject();
+                if (interactable != null)
+                {
+                    interactable.Interact(transform);
+                    if (interactable is StaffInteractable) HoldingObj = (StaffInteractable)interactable;
+                }
             }
         }
     }

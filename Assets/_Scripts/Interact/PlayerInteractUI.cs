@@ -8,8 +8,9 @@ public class PlayerInteractUI : MonoBehaviour {
 
     [SerializeField] private GameObject containerGameObject;
     [SerializeField] private PlayerInteract playerInteract;
+    //Assets._Scripts.Minigames.TowerGame.InZoneMiniGame inZoneMiniGame = ;
     //[SerializeField] private TextMeshProUGUI interactTextMeshProUGUI;
-    
+
     private void Update() {
         if (playerInteract.GetInteractableObject() != null) {
             Show(playerInteract.GetInteractableObject());
@@ -33,6 +34,10 @@ public class PlayerInteractUI : MonoBehaviour {
         VisualElement visualElement = document.rootVisualElement;
         Label label = visualElement.Q("Label") as Label;
         label.text = text;
+
+        //inZoneMiniGame.GameProgressChanged.AddListener((int a, int b) => { Debug.Log("!"); });
     }
+
+
 
 }

@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1568086987559449644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3295848216874727405}
+  m_Layer: 0
+  m_Name: H
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3295848216874727405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568086987559449644}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.398, z: 0}
+  m_LocalScale: {x: 1, y: 0.5681818, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 783897139222342836}
+  m_Father: {fileID: 553152892758298157}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3934145353830241907
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,11 +142,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.76, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1025651406533221411}
-  m_Father: {fileID: 553152892758298157}
+  m_Father: {fileID: 3295848216874727405}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6975990888520695598
 MonoBehaviour:
@@ -135,7 +167,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 553152892758298157}
+  m_Follow: {fileID: 3295848216874727405}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
@@ -166,12 +198,12 @@ GameObject:
   - component: {fileID: 553152892758298157}
   - component: {fileID: 7133548145245195846}
   - component: {fileID: 6895743271569343429}
-  - component: {fileID: 9072947825963317951}
   - component: {fileID: 7134857501520055510}
   - component: {fileID: 4959942915448863786}
   - component: {fileID: 4473328252688518064}
   - component: {fileID: 3999814884564824708}
   - component: {fileID: 929274592141787702}
+  - component: {fileID: 5849121599322768873}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -194,7 +226,7 @@ Transform:
   m_Children:
   - {fileID: 628100078827466595}
   - {fileID: 2305534783173816439}
-  - {fileID: 783897139222342836}
+  - {fileID: 3295848216874727405}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7133548145245195846
@@ -247,27 +279,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &9072947825963317951
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4447884926445956609}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7134857501520055510
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -361,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractKey: 101
+  ThrowKey: 118
   interactRange: 3
   HoldingObj: {fileID: 0}
   RayMethod: 1
@@ -382,6 +394,29 @@ MonoBehaviour:
   smoothing: {x: 1.5, y: 1.5}
   cameraName: Camera
   cam: {fileID: 6975990888520695598}
+--- !u!136 &5849121599322768873
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447884926445956609}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4610794999871644056
 GameObject:
   m_ObjectHideFlags: 0
