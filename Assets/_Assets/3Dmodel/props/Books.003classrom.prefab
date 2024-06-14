@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 941337825740712495}
   - component: {fileID: 237418881046416076}
   - component: {fileID: 7804523947023931929}
+  - component: {fileID: 5349553101234757976}
   m_Layer: 0
   m_Name: Books.003classrom
   m_TagString: Untagged
@@ -106,3 +107,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8812166706820785641, guid: 1ab242bc61599944ea7ada287815f9e2, type: 3}
+--- !u!65 &5349553101234757976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75231730115448512}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003546419, y: 0.0032229817, z: 0.0003910238}
+  m_Center: {x: 0.000058407197, y: -0.00010718094, z: 7.494238e-10}
