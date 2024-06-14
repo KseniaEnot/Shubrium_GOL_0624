@@ -1,0 +1,6 @@
+.Text {
+    -unity-font: url("project://database/Assets/_UI/Sprites/2D/Comic%20Sans%20MS.ttf?fileID=12800000&guid=4fa93e44b556f2a46a472a76fabd473b&type=3#Comic Sans MS");
+    -unity-font-definition: initial;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+}
