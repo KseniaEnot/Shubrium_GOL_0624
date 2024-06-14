@@ -765,7 +765,7 @@ Transform:
   m_GameObject: {fileID: 8635620926913096739}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1799629, y: 0.72311854, z: 4.987}
+  m_LocalPosition: {x: -1.179963, y: 0.7231185, z: 4.987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -796,7 +796,9 @@ MonoBehaviour:
   GameWin:
     m_PersistentCalls:
       m_Calls: []
-  playing: 1
+  GameProgressChanged:
+    m_PersistentCalls:
+      m_Calls: []
   AllInZoneObjects: []
   GameZone: {fileID: 0}
 --- !u!82 &4055819294116095125
