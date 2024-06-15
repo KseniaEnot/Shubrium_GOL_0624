@@ -39,5 +39,11 @@ namespace Assets._Scripts.Movement
             cam.gameObject.SetActive(false);
             cam.gameObject.SetActive(true);
         }
+
+        public void OrigCameraReset()
+        {
+            originCam.enabled = false;
+            originCam.enabled = true;
+        }
     }
 }
