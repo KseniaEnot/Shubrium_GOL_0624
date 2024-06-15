@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class SequenceController : MiniGame
+public class SequenceControllerGame : MiniGame
 {
     [SerializeField]
     public int StartedSequenceLength;
@@ -50,13 +50,13 @@ public class SequenceController : MiniGame
     protected virtual void Awake()
     {
     }
-    public new  void StartGame()
+    public override void StartGame()
     {
         base.StartGame();
         StartNewGame();
         GameProgressChanged.Invoke(CurrentNum,ScoreToWin);
     }
-    private new void StopGame()
+    public override void StopGame()
     {
         base.StopGame();    
         SetCatsClickable(false);

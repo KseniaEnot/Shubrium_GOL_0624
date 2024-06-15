@@ -9,7 +9,7 @@ public enum Nota
     LYA,
     SI
 }
-public class Ksilophone : SequenceController
+public class KsilophoneGame : SequenceControllerGame
 {
     KsilophoneButtonInteractable clickable;
     [SerializeField]
