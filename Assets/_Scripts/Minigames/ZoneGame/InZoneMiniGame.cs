@@ -53,12 +53,14 @@ namespace Assets._Scripts.Minigames.TowerGame
         }
         public new void StartGame()
         {
+            Debug.Log("StartGame");
             base.StartGame();
             playing=true;
             GameProgressChanged.Invoke(0, AllInZoneObjects.Count);
         }
         public new void StopGame()
         {
+            Debug.Log("StopGame");
             base.StopGame();
             playing = false;
         }

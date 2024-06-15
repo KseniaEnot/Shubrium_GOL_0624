@@ -1,12 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
     public Dialogue dialogue;
+    [SerializeField]
     private MonologueUI monologueUI;
 
     private Queue<string> sentences;
@@ -16,15 +14,15 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        sentences = new Queue<string>();
-        monologueUI = gameObject.GetComponent<MonologueUI>();
+        //sentences = new Queue<string>();
+        monologueUI = GetComponent<MonologueUI>();
     }
 
     public void Update()
     {
         if (isRunning)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 //monologueUI.Show();
                 DisplayNextSentence();
@@ -37,16 +35,23 @@ public class DialogueManager : MonoBehaviour
     {
         if (!isRunning)
         {
+            sentences = new Queue<string>();
+            sentences.Clear();
             Debug.Log("StartDialogue " + gameObject.name);
             isRunning = true;
-            //sentences.Clear();
-            //включать монолог
             foreach (string sentence in dialogue.sentences)
             {
+                Debug.Log("sentence " + sentence);
                 sentences.Enqueue(sentence);
             }
+            Debug.Log("0? ");
+            Debug.Log("monologueUI is null????? "+ (monologueUI == null));
+            Debug.Log("monologueUI is null????? " + monologueUI);
             monologueUI.Show();
+            Debug.Log("1? ");
             DisplayNextSentence();
+            Debug.Log("2? ");
+
         }
     }
 
