@@ -14,8 +14,6 @@ public class KsilophoneButtonInteractable : MonoBehaviour, IInteractable
     public Ksilophone Owner;
     [SerializeField]    
     public Nota Nota;
-    public int SceneID;
-    public string Name;
     private AudioClip Sound;
     [HideInInspector]
     public bool clickAvailable;
