@@ -12,11 +12,11 @@ public static class Loader
     private static AsyncOperation loadingAsyncOperation;
     public enum Scene
     {
-        Level1,
-        Level2,
-        Level3,
-        Level4,
-        Level5,
+        s1_home,
+        s2_class,
+        s3_ofice,
+        s4_home,
+        s5_home,
         Loading,
         MainMenu
     }
@@ -25,7 +25,7 @@ public static class Loader
     {
         onLoaderCallback = () =>
         {
-            GameObject loadingGO = new GameObject("loadingGO");
+            GameObject loadingGO = new GameObject("loadingScene "+ scene.ToString());
             loadingGO.AddComponent<LoadingMonoBehaviour>().StartCoroutine(LoadSceneAsync(scene));
             
         };

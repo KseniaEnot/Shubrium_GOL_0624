@@ -3,14 +3,13 @@ using Assets._Scripts.Movement;
 using Cinemachine;
 using System.Collections;
 using UnityEngine;
-[RequireComponent(typeof(KashaGame))]
 public class KashaInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField]
     CinemachineVirtualCamera VirtualCamera1;
     [SerializeField]
     CinemachineVirtualCamera VirtualCamera2;
-    private KashaGame KashaGame;
+    private MiniGame KashaGame;
     [SerializeField]
     private string Text= "ПРИСТУПИТЬ К ПОЕДАНИЮ";
     private void Awake()

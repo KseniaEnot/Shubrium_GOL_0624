@@ -7,11 +7,8 @@ using UnityEngine;
 using UnityEngine.Events;
 public class MiniGame : MonoBehaviour
 {
-    [HideInInspector]
     public UnityEvent GameStoped;
-    [HideInInspector]
-    public UnityEvent GameStarted;
-    [HideInInspector]
+    public UnityEvent GameStarted;  
     public UnityEvent GameWin;
     public UnityEvent<int, int> GameProgressChanged;
     protected bool playing=false;

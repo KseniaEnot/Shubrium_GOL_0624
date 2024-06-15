@@ -10,6 +10,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -94,8 +95,9 @@ public class Outline2 : MonoBehaviour {
     outlineMaskMaterial.name = "OutlineMask (Instance)";
     outlineFillMaterial.name = "OutlineFill (Instance)";
 
-    // Retrieve or generate smooth normals
-    LoadSmoothNormals();
+        // Retrieve or generate smooth normals
+        Debug.Log("loaderSMOOTHNOT LOADED");
+    //LoadSmoothNormals();
 
     // Apply material properties immediately
     needsUpdate = true;
