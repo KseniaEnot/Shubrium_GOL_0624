@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Assets._Scripts.Movement;
+//using Assets._Scripts.Movement;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -19,8 +19,8 @@ public class MonologueUI : MonoBehaviour, IInteractable
     void Start()
     {
         //его как нибудь получать нужно чтобы не цеплять каждый раз с 0 
-        containerGameObject = GameObject.FindGameObjectWithTag("Monologue");
-        Debug.Log(containerGameObject==null);
+        //containerGameObject = GameObject.FindGameObjectWithTag("Monologue");
+        //Debug.Log(containerGameObject==null);
     }
     public void Update()
     {
@@ -62,8 +62,11 @@ public class MonologueUI : MonoBehaviour, IInteractable
             foreach (string sentence in dialogue.sentences)
             {
                 sentences.Enqueue(sentence);
+                Debug.Log(sentence);
             }
+            Debug.Log("1");
             Show();
+            Debug.Log("2");
             DisplayNextSentence();
 
         }
@@ -86,8 +89,10 @@ public class MonologueUI : MonoBehaviour, IInteractable
     
     public void Show()
     {
+        Debug.Log("3");
         containerGameObject.SetActive(true);
         //Player.instance.OnDialogInteract();
+        Debug.Log("4");
         UItoolkit_unarchive();
     }
 
