@@ -25,10 +25,9 @@ public class SequenceControllerGame : MiniGame
     [HideInInspector]
     public bool IsClickable;
     public UnityEvent<RoundState> roundStateChanged;
-    private ScoreManager ScoreManager = new ScoreManager();
-    private RoundState roundState;
-    private int CurrentNum;
-    
+    protected ScoreManager ScoreManager;
+    protected RoundState roundState;
+    protected int CurrentNum;
     public enum RoundState
     {
         gameStarting,
@@ -47,8 +46,13 @@ public class SequenceControllerGame : MiniGame
     {
         audioSource =GetComponent<AudioSource>();
     }
-    protected virtual void Awake()
+    protected void Awake()
     {
+        foreach (var item in ClickableObjects)
+        {
+            item.Clicked.AddListener(OnClickableClick);
+        }
+        ScoreManager = GetComponent<ScoreManager>();
     }
     public override void StartGame()
     {
@@ -106,7 +110,7 @@ public class SequenceControllerGame : MiniGame
         for (int i = 0; i < ClickableSequence.Count; i++)
         {
             ClickableSequence[i].Click();
-            yield return new WaitForSeconds(ClickableSequence[i].GetSoundLength());
+            yield return new WaitForSeconds(ClickableSequence[i].SoundLength);
         }
         SetRoundState(roundState = RoundState.roundStarting);
         SetCatsClickable(true);

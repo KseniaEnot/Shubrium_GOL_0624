@@ -30,7 +30,7 @@ public class MiniGameInteractable : MonoBehaviour, IInteractable
 
     private IEnumerator StartEating()
     {;   
-        Player.instance.OnDialogInteract();
+        Player.instance.OnDialogInteract(false,false);
         Player.instance.SetNewCam(VirtualCamera1);
         yield return new WaitForSeconds(1);
         Player.instance.SetNewCam(VirtualCamera2);

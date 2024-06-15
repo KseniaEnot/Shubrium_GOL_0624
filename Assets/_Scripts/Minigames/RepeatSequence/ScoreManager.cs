@@ -4,16 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ScoreManager
+public class ScoreManager : MonoBehaviour
 {
-    public int Score=0;
+    private int score = 0;
+    public int Score
+    {
+        get
+        {
+            return score;
+        }
+        set
+        {
+            score=value;
+            ScoreChanged.Invoke(score); 
+        }
+    }
     public int HighScore=0;
     public UnityEvent <int> ScoreChanged;
     public UnityEvent NewHighScoreReached;
     public void Add()
     {
         Score++;
-        ScoreChanged.Invoke(Score);
         if(Score > HighScore)
         {
             ReachNewHighScore();
@@ -22,12 +33,10 @@ public class ScoreManager
     public void ResetPoints()
     {
         Score = 0;
-        ScoreChanged.Invoke(Score);
     }
     public void Set(int score)
     {
         Score=score;
-        ScoreChanged.Invoke(Score);
         if (Score > HighScore)
         {
             ReachNewHighScore();

@@ -11,7 +11,6 @@ public enum Nota
 }
 public class KsilophoneGame : SequenceControllerGame
 {
-    KsilophoneButtonInteractable clickable;
     [SerializeField]
     public AudioClip DO;
     [SerializeField]
@@ -26,12 +25,6 @@ public class KsilophoneGame : SequenceControllerGame
     public AudioClip LYA;
     [SerializeField]   
     public AudioClip SI;
-    
-    protected override void Awake()
-    {
-        base.Awake();
-        clickable= GetComponent<KsilophoneButtonInteractable>();   
-    }
     public string GetNotaText(Nota nota)
     {
         switch (nota)

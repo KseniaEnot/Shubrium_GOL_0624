@@ -12,7 +12,11 @@ public class PlayerInteractUI : MonoBehaviour {
     //[SerializeField] private TextMeshProUGUI interactTextMeshProUGUI;
 
     private void Update() {
-        if (playerInteract.GetInteractableObject() != null) {
+        if ((playerInteract.HoldingObj!=null))
+        {
+            Show(playerInteract.HoldingObj);
+        }
+        else if (playerInteract.GetInteractableObject() != null) {
             Show(playerInteract.GetInteractableObject());
         } else {
             Hide();

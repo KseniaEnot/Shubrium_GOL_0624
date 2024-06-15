@@ -60,7 +60,6 @@ public class PlayerInteract : MonoBehaviour {
 
     public IInteractable GetInteractableObject()
     {
-        {
             IInteractable Interactable;
             if (RayMethod)
             {
@@ -80,7 +79,6 @@ public class PlayerInteract : MonoBehaviour {
                 Interactable = GetClosestInteractable(interactableList);
             }
             return Interactable;
-        }
     }
     
     private void setOutline()

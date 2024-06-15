@@ -350,12 +350,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
-  GroundCheckRange: 0
+  GroundCheckRange: 0.2
   jump: 32
   sprint: 304
   crouch: 122
   outlineKey: 113
-  DrawOutlineRange: 0
+  DrawOutlineRange: 5
   areWeGrounded: 1
   areWeCrouching: 0
   currentSpeed: 0

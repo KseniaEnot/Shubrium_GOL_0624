@@ -26,8 +26,12 @@ namespace Assets._Scripts.Movement
          }
         public void OnDialogInteract()
         {
-            CameraController.enabled = false;
-            PlayerMovement.enabled = false;
+            OnDialogInteract(false,false);
+        }
+        public void OnDialogInteract(bool camera,bool movement)
+        {
+            CameraController.enabled = camera;
+            PlayerMovement.enabled = movement;
         }
         public void ReturnNormal()
         {

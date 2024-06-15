@@ -26,5 +26,5 @@ public abstract class MiniGame : MonoBehaviour
     {
         GameWin.Invoke();
     }
-        
+
 }

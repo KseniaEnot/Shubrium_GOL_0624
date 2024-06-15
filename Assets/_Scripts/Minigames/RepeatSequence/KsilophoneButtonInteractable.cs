@@ -14,7 +14,7 @@ public class KsilophoneButtonInteractable : MonoBehaviour, IInteractable
     public KsilophoneGame Owner;
     [SerializeField]    
     public Nota Nota;
-    private AudioClip Sound;
+    public  AudioClip Sound;
     [HideInInspector]
     public bool clickAvailable;
     private Button button;
@@ -32,9 +32,12 @@ public class KsilophoneButtonInteractable : MonoBehaviour, IInteractable
         SetOutlineMode(true);
         Sound = Owner.GetNota(Nota);
     }
-    public float GetSoundLength()
-    {
-        return Sound.length;    
+    public float SoundLength { 
+        get
+        {
+            if (Sound!=null)return Sound.length;
+            return 0;
+        }
     }
     private void Awake()
     {
@@ -51,7 +54,7 @@ public class KsilophoneButtonInteractable : MonoBehaviour, IInteractable
     {
         if (clickAvailable)
         {
-            Owner.OnClickableClick(this);
+            //Owner.OnClickableClick(this);
             Play();
         }
     }

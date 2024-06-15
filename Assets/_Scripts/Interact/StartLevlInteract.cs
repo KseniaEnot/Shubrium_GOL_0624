@@ -43,7 +43,7 @@ public class StartLevlInteract : MonoBehaviour, IInteractable
         VirtualCamera1.enabled = false;
         VirtualCamera1.enabled = true;
         Player.instance.SetNewCam(VirtualCamera1);
-        Player.instance.OnDialogInteract();
+        Player.instance.OnDialogInteract(true,false);
         yield return new WaitForSeconds(timeToWait);
         Player.instance.OrigCameraReset();
         yield return new WaitForSeconds(timeToWait);
