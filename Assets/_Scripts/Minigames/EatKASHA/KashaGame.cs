@@ -25,7 +25,7 @@ namespace Assets._Scripts.Minigames.EatKASHA
             {
                 if (ItemsToEat.Count == 0)
                 {
-                    StartCoroutine(Stop());
+                    StopGame();
                 }
                 //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 //RaycastHit hit;
