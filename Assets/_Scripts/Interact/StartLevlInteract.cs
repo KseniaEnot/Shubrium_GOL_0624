@@ -47,10 +47,9 @@ public class StartLevlInteract : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(timeToWait);
         Player.instance.OrigCameraReset();
         yield return new WaitForSeconds(timeToWait);
-        //почему ты дёргаешься....
-        /*if (dialogueManager.isRunning == false)
-        {*/
+        if (dialogueManager.isRunning == false)
+        {
             Player.instance.ReturnNormal();
-        //}
+        }
     }
 }

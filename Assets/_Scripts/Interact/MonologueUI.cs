@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-//using Assets._Scripts.Movement;
+using Assets._Scripts.Movement;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class MonologueUI : MonoBehaviour, IInteractable
 {
     
-    //[SerializeField] 
-    private GameObject containerGameObject;
+    [SerializeField] private GameObject containerGameObject;
     [SerializeField] private string interactText;
     private Label label;
     [SerializeField] private Dialogue dialogue;
