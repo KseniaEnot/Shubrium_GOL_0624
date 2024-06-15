@@ -10,7 +10,7 @@ using UnityEngine.Events;
 
 namespace Assets._Scripts.Minigames.TowerGame
 {
-    internal class InZoneMiniGame : MiniGame
+    internal class InZoneGame : MiniGame
     {
         private bool IsWinning;
         private float timeToWin;
@@ -51,14 +51,14 @@ namespace Assets._Scripts.Minigames.TowerGame
             Win();
 
         }
-        public new void StartGame()
+        public override void StartGame()
         {
             Debug.Log("StartGame");
             base.StartGame();
             playing=true;
             GameProgressChanged.Invoke(0, AllInZoneObjects.Count);
         }
-        public new void StopGame()
+        public override void StopGame()
         {
             Debug.Log("StopGame");
             base.StopGame();

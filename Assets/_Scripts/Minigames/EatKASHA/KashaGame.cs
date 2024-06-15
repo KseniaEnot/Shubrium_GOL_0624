@@ -43,7 +43,7 @@ namespace Assets._Scripts.Minigames.EatKASHA
                 //}
             }
         }
-        public new void StartGame()
+        public override void StartGame()
         {
             base.StartGame();
             playing=true; 
@@ -64,7 +64,7 @@ namespace Assets._Scripts.Minigames.EatKASHA
             GameProgressChanged.Invoke(MaxItems-ItemsToEat.Count, MaxItems);
         }
 
-        private new void StopGame()
+        public override void StopGame()
         {
             base.StopGame();
             StartCoroutine(Stop()); 

@@ -3,19 +3,16 @@ using Assets._Scripts.Movement;
 using Cinemachine;
 using System.Collections;
 using UnityEngine;
-public class KashaInteractable : MonoBehaviour, IInteractable
+public class MiniGameInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField]
     CinemachineVirtualCamera VirtualCamera1;
     [SerializeField]
     CinemachineVirtualCamera VirtualCamera2;
-    private MiniGame KashaGame;
     [SerializeField]
-    private string Text= "ПРИСТУПИТЬ К ПОЕДАНИЮ";
-    private void Awake()
-    {
-        KashaGame=GetComponent<KashaGame>();
-    }
+    public MiniGame MiniGame;
+    [SerializeField]
+    private string Text= "CЫГРАТЬ В ИГРУ";
     public string GetInteractText()
     {
         return Text;
@@ -38,10 +35,9 @@ public class KashaInteractable : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(1);
         Player.instance.SetNewCam(VirtualCamera2);
         yield return new WaitForSeconds(1);
-        KashaGame.StartGame();
+        MiniGame.StartGame();
         gameObject.GetComponent<Collider>().enabled = false;
-
-        KashaGame.GameStoped.AddListener(() => {
+        MiniGame.GameStoped.AddListener(() => {
             StartCoroutine(OnGameStop());
         });
     }

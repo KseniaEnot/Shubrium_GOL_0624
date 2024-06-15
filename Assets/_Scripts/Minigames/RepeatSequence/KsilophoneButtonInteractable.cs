@@ -11,7 +11,7 @@ public class KsilophoneButtonInteractable : MonoBehaviour, IInteractable
 {
 
     [SerializeField]
-    public Ksilophone Owner;
+    public KsilophoneGame Owner;
     [SerializeField]    
     public Nota Nota;
     private AudioClip Sound;
