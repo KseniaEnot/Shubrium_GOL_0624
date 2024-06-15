@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-//using Assets._Scripts.Movement;
+using Assets._Scripts.Movement;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -58,6 +58,7 @@ public class MonologueUI : MonoBehaviour, IInteractable
     {
         if (!isRunning)
         {
+            Player.instance.OnDialogInteract(true, false);
             sentences = new Queue<string>();
             sentences.Clear();
             Debug.Log("StartDialogue " + gameObject.name);
@@ -77,9 +78,12 @@ public class MonologueUI : MonoBehaviour, IInteractable
     public void EndDialogue()
     {
         Hide();
-        if (game!=null)
+        if (game != null) { 
             game.StartGame();
+            GetComponent<Collider>().enabled = false;
+        }
         isRunning = false;
+        Player.instance.ReturnNormal();
         mnologueEnd.Invoke();
     }
     public void DisplayNextSentence()
