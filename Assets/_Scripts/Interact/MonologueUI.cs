@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 //using Assets._Scripts.Movement;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 public class MonologueUI : MonoBehaviour, IInteractable
@@ -9,8 +10,10 @@ public class MonologueUI : MonoBehaviour, IInteractable
     
     [SerializeField] private GameObject containerGameObject;
     [SerializeField] private string interactText;
+    [SerializeField] private MiniGame game;
     private Label label;
     [SerializeField] private Dialogue dialogue;
+    public UnityEvent mnologueEnd;
 
     private Queue<string> sentences;
 
@@ -74,7 +77,10 @@ public class MonologueUI : MonoBehaviour, IInteractable
     public void EndDialogue()
     {
         Hide();
+        if (game!=null)
+            game.StartGame();
         isRunning = false;
+        mnologueEnd.Invoke();
     }
     public void DisplayNextSentence()
     {
