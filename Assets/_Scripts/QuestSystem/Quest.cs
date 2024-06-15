@@ -29,8 +29,24 @@ public class Quest : MonoBehaviour
     }
     private void OnGoalCompleted()
     {
-        if (Goals.All(g => g.IsReached))
-            QuestCompleted.Invoke();
+
+        Debug.Log("QUes's Goal completed");
+        foreach (var goal in Goals)
+        {
+            Debug.Log("Goal" + goal.Title);
+            if (!goal.IsReached)
+            {
+                Debug.Log("not conpleted");
+
+
+                return;
+            }
+            Debug.Log("completed");
+
+        }
+        QuestCompleted.Invoke();
+        Debug.Log("QUestComlpeted");
+        isReached = true;
     }
 }
 
