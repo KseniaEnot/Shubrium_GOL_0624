@@ -3,6 +3,10 @@ using UnityEngine.Events;
 
 public class Goal : MonoBehaviour
 {
+    [SerializeField]
+    public string Title;
+    [SerializeField]
+    public string Description;
     [HideInInspector]
     public UnityEvent GoalCompleted;
     [HideInInspector]
@@ -18,11 +22,12 @@ public class Goal : MonoBehaviour
             currentAmmount = now;
             GoalProgressChanged.Invoke(now, max);
             if (currentAmmount >= requiredAmmount)
-            { 
-                GoalCompleted.Invoke(); 
+            {
                 IsReached = true;
+                GoalCompleted.Invoke(); 
             }
         }
+        Debug.Log("GoalProgressChanged");
     }
 }
 

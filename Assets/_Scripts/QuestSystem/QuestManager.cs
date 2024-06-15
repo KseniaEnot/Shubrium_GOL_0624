@@ -13,6 +13,7 @@ public class QuestManager : MonoBehaviour
     public List<Quest> quests = new List<Quest>();
     private int questNum=0;
     public UnityEvent ALLQUESTCOMPLETED;
+    public UnityEvent NewQuest;
     public Quest CurrentQuest;
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class QuestManager : MonoBehaviour
     public void AddQuest(Quest newQuest)
     {
         quests.Add(newQuest);
+        NewQuest.Invoke();
     }
     public void OnQuestCompleted()
     {
@@ -33,7 +35,7 @@ public class QuestManager : MonoBehaviour
             NextQuest();
         }
         if (quests.All(g => g.IsReached()))
-            ALLQUESTCOMPLETED.Invoke();
+        { ALLQUESTCOMPLETED.Invoke(); Debug.Log("ALLQUestsCompleted"); }
     }
 
     private void NextQuest()
