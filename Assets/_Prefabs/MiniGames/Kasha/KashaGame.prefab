@@ -513,7 +513,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d24955f14020bc4a9e04995e5851c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameStopped:
+  GameStoped:
+    m_PersistentCalls:
+      m_Calls: []
+  GameStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  GameWin:
+    m_PersistentCalls:
+      m_Calls: []
+  GameProgressChanged:
     m_PersistentCalls:
       m_Calls: []
   ItemsToEat:
@@ -535,6 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VirtualCamera1: {fileID: 4164545801650634618}
   VirtualCamera2: {fileID: 8334292458164484892}
+  MiniGame: {fileID: 7460332081288182391}
   Text: "\u041F\u0420\u0418\u0421\u0422\u0423\u041F\u0418\u0422\u042C \u041A \u041F\u041E\u0415\u0414\u0410\u041D\u0418\u042E"
 --- !u!1 &7241341381168438018
 GameObject:

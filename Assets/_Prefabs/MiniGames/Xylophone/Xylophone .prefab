@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567667993699361967}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.3690125, y: 0.21429223, z: 0.49272, w: 0.7583771}
-  m_LocalPosition: {x: -0.0056, y: 0.00156, z: 0.0245}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0056, y: 0.00156, z: 0.02187}
   m_LocalScale: {x: 0.0142857125, y: 0.02514286, z: 0.014285715}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1451923156596622451}
   m_Father: {fileID: 3924733709329345148}
-  m_LocalEulerAnglesHint: {x: -50.432, y: 356.525, z: -292.339}
+  m_LocalEulerAnglesHint: {x: 2.405, y: 355.465, z: -360.089}
 --- !u!114 &1881726540074481121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1451923156596622451}
   - component: {fileID: 1587011805362838068}
-  - component: {fileID: 514474013852263272}
+  - component: {fileID: 6097972855324503674}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &514474013852263272
+--- !u!114 &6097972855324503674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VirtualCamera1: {fileID: 1638772689878847368}
-  VirtualCamera2: {fileID: 1881726540074481121}
+  VirtualCamera2: {fileID: 2928363119944757400}
   MiniGame: {fileID: 68496935327015221}
   Text: "\u0421\u044B\u0433\u0440\u0430\u0442\u044C \u043D\u0430 \u041A\u0441\u0438\u043B\u043E\u0444\u043E\u043D\u0435"
 --- !u!65 &7481798773392073374
