@@ -12,7 +12,9 @@ namespace Assets._Scripts.Minigames.EatKASHA
     {
         [SerializeField]
         public string Text;
+        public UnityEvent OnInteract;
         public UnityEvent Eated;
+        public bool disableOnInteract = true;   
         private void Awake()
         {
             gameObject.GetComponent<Collider>().enabled = false;
@@ -29,7 +31,8 @@ namespace Assets._Scripts.Minigames.EatKASHA
 
         public void Interact(Transform interactorTransform)
         {
-            gameObject.SetActive(false);
+            OnInteract.Invoke();
+            if(disableOnInteract) gameObject.SetActive(false);
             Eated?.Invoke();
         }
     }
