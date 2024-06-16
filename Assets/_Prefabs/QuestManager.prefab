@@ -52,6 +52,7 @@ MonoBehaviour:
   GoalProgressChanged:
     m_PersistentCalls:
       m_Calls: []
+  CompleteGoal: 0
   game: {fileID: 0}
 --- !u!1 &1404005568956116174
 GameObject:
@@ -241,6 +242,7 @@ Transform:
   - {fileID: 48539539807532423}
   - {fileID: 7494640640348055490}
   - {fileID: 2126394247718150426}
+  - {fileID: 8363159107465572264}
   - {fileID: 5993368276354476766}
   - {fileID: 3257672099575373291}
   m_Father: {fileID: 1865948717109983522}
@@ -297,6 +299,7 @@ MonoBehaviour:
   GoalProgressChanged:
     m_PersistentCalls:
       m_Calls: []
+  CompleteGoal: 0
   game: {fileID: 0}
 --- !u!1 &3654940455324354514
 GameObject:
@@ -350,7 +353,62 @@ MonoBehaviour:
   GoalProgressChanged:
     m_PersistentCalls:
       m_Calls: []
+  CompleteGoal: 0
   game: {fileID: 0}
+--- !u!1 &4054301635095753353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8363159107465572264}
+  - component: {fileID: 6792976897214549892}
+  m_Layer: 0
+  m_Name: FinalGoal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8363159107465572264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054301635095753353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 223576981154091343}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6792976897214549892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4054301635095753353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dde4afaac7b8a46808a7bd27942703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Title: 
+  Description: 
+  GoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  GoalProgressChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  CompleteGoal: 0
+  MonologueUI: {fileID: 0}
 --- !u!1 &4524608062151684469
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +513,7 @@ MonoBehaviour:
   GoalProgressChanged:
     m_PersistentCalls:
       m_Calls: []
+  CompleteGoal: 0
   game: {fileID: 0}
 --- !u!1 &5626214377820122112
 GameObject:
@@ -675,4 +734,5 @@ MonoBehaviour:
   GoalProgressChanged:
     m_PersistentCalls:
       m_Calls: []
+  CompleteGoal: 0
   game: {fileID: 0}

@@ -11,7 +11,6 @@ public class MiniGameGoal : Goal
         game.GameProgressChanged.AddListener(ProgressChanged);
     }
 }
-
 //public class QuestManager : MonoBehaviour
 //{
 //    public List<Quest> quests = new List<Quest>();

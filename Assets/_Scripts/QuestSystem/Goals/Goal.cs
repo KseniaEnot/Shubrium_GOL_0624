@@ -14,6 +14,7 @@ public class Goal : MonoBehaviour
     protected int requiredAmmount;
     protected int currentAmmount;
     public bool IsReached { get; private set; }
+    public bool CompleteGoal;
     protected void ProgressChanged(int now,int max)
     {
         if (IsReached != true)
@@ -23,12 +24,24 @@ public class Goal : MonoBehaviour
             GoalProgressChanged.Invoke(now, max);
             if (currentAmmount >= requiredAmmount)
             {
-                IsReached = true;
-                GoalCompleted.Invoke(); 
             }
         }
         Debug.Log("GoalProgressChanged");
+        
     }
+    private void Update()
+    {
+        if (CompleteGoal)
+        {
+            Complete();
+        }
+    }
+    public void Complete()
+    {
+        IsReached = true;
+        GoalCompleted.Invoke();
+    }
+
 }
 
 //public class QuestManager : MonoBehaviour
