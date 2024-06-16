@@ -53,8 +53,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.2085393, y: 0.15, z: 0.07842962}
-  m_Center: {x: -0.02926946, y: 0.019999996, z: 0.07676191}
+  m_Size: {x: 0.3763852, y: 0.18762487, z: 0.10888758}
+  m_Center: {x: -0.024028346, y: 0.11, z: 0.09199057}
 --- !u!114 &6625903211282966410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,8 +573,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.24250868, y: 0.15, z: 0.08293263}
-  m_Center: {x: -0.011609329, y: 0.019999996, z: -0.10641716}
+  m_Size: {x: 0.33386552, y: 0.15, z: 0.21626893}
+  m_Center: {x: -0.017882958, y: 0.11, z: -0.09435132}
 --- !u!114 &3559708956609711422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,6 +689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8153304690531745969}
   - component: {fileID: 2181972759149924894}
+  - component: {fileID: 9036269660483621054}
   m_Layer: 0
   m_Name: PaintGameM
   m_TagString: Untagged
@@ -737,6 +738,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isRunning: 0
+--- !u!65 &9036269660483621054
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378702613152318300}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.8224182}
+  m_Center: {x: 0, y: 0, z: -0.08879089}
 --- !u!1 &4524768546302631095
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,8 +845,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.29464158, y: 0.15, z: 0.10949732}
-  m_Center: {x: 0.010619051, y: 0.019999996, z: 0.02025154}
+  m_Size: {x: 0.40766847, y: 0.15, z: 0.17376415}
+  m_Center: {x: -0.019179782, y: 0.11, z: 0.052384924}
 --- !u!114 &4594479441304164777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1148,8 +1170,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.26477018, y: 0.15, z: 0.06942608}
-  m_Center: {x: -0.020292869, y: 0.019999996, z: 0.029999977}
+  m_Size: {x: 0.26477018, y: 0.15, z: 0.17364585}
+  m_Center: {x: -0.020292863, y: 0.11, z: 0.0052863136}
 --- !u!114 &5920508815538811258
 MonoBehaviour:
   m_ObjectHideFlags: 0
