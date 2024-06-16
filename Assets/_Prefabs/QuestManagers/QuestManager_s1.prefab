@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &708675480838345126
+--- !u!1 &274367562208565057
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,104 +8,74 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3257672099575373291}
-  - component: {fileID: 7336764253813258762}
+  - component: {fileID: 4880681858824935610}
+  - component: {fileID: 6823588967747774539}
   m_Layer: 0
-  m_Name: PaintGameGoal
+  m_Name: QuestManager_s1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3257672099575373291
+--- !u!4 &4880681858824935610
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708675480838345126}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 223576981154091343}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7336764253813258762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708675480838345126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8839e74f2a9e7d4290f5e54abd75ffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Title: PaintGameGoal
-  Description: PaintGameGoal
-  GoalCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  GoalProgressChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  game: {fileID: 0}
---- !u!1 &1404005568956116174
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 175804807331665402}
-  - component: {fileID: 107273872170220345}
-  m_Layer: 0
-  m_Name: PaintGameQuest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &175804807331665402
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404005568956116174}
+  m_GameObject: {fileID: 274367562208565057}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.77248, y: -4.297791, z: -53.05844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1865948717109983522}
+  m_Children:
+  - {fileID: 4125710313486742520}
+  - {fileID: 5330853221598936684}
+  - {fileID: 7888379708784449281}
+  - {fileID: 2310131221896512135}
+  - {fileID: 7780901143979323599}
+  - {fileID: 3063022710476551194}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &107273872170220345
+--- !u!114 &6823588967747774539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404005568956116174}
+  m_GameObject: {fileID: 274367562208565057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc9225fd6c3eb684d94fc11cf6eeb44d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2abac35869c1c9e47a870d955620952c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: PaintGameQuest
-  Description: PaintGameQuest Desc
-  isReached: 0
-  QuestCompleted:
+  IsSequenceMode: 0
+  quests:
+  - {fileID: 1007271281532912927}
+  - {fileID: 7215706442710454839}
+  - {fileID: 184643738076680040}
+  - {fileID: 877403516351681422}
+  ALLQUESTCOMPLETED:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6823588967747774539}
+        m_TargetAssemblyTypeName: QuestManager, Assembly-CSharp
+        m_MethodName: AddQuest
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2300930395929187090}
+          m_ObjectArgumentAssemblyTypeName: Quest, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  AddedNewQuest:
     m_PersistentCalls:
       m_Calls: []
-  Goals:
-  - {fileID: 0}
---- !u!1 &1577830810724764148
+  CurrentQuest: {fileID: 0}
+--- !u!1 &2597664794649554964
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,8 +83,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7719079969940387803}
-  - component: {fileID: 7555882045387727734}
+  - component: {fileID: 5330853221598936684}
+  - component: {fileID: 1007271281532912927}
   m_Layer: 0
   m_Name: KashaGameQuest
   m_TagString: Untagged
@@ -122,28 +92,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7719079969940387803
+--- !u!4 &5330853221598936684
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577830810724764148}
+  m_GameObject: {fileID: 2597664794649554964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1865948717109983522}
+  m_Father: {fileID: 4880681858824935610}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7555882045387727734
+--- !u!114 &1007271281532912927
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577830810724764148}
+  m_GameObject: {fileID: 2597664794649554964}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc9225fd6c3eb684d94fc11cf6eeb44d, type: 3}
@@ -156,8 +126,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   Goals:
-  - {fileID: 6585869801183666903}
---- !u!1 &1651985603231378126
+  - {fileID: 8784897912234838444}
+--- !u!1 &3270764428202464186
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,51 +135,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8778588562119265878}
-  - component: {fileID: 3764898292196862815}
+  - component: {fileID: 7780901143979323599}
+  - component: {fileID: 184643738076680040}
   m_Layer: 0
-  m_Name: CorsinaGameQuest
+  m_Name: PaintGameQuest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8778588562119265878
+--- !u!4 &7780901143979323599
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651985603231378126}
+  m_GameObject: {fileID: 3270764428202464186}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1865948717109983522}
+  m_Father: {fileID: 4880681858824935610}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3764898292196862815
+--- !u!114 &184643738076680040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651985603231378126}
+  m_GameObject: {fileID: 3270764428202464186}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc9225fd6c3eb684d94fc11cf6eeb44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: CorsinaGameQuest
-  Description: CorsinaGameQuest desc
+  Title: PaintGameQuest
+  Description: PaintGameQuest Desc
   isReached: 0
   QuestCompleted:
     m_PersistentCalls:
       m_Calls: []
   Goals:
-  - {fileID: 7811126906119391941}
---- !u!1 &2455976192101434023
+  - {fileID: 5272333091067089480}
+--- !u!1 &3288722198075627318
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,97 +187,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 223576981154091343}
-  m_Layer: 0
-  m_Name: Goals
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &223576981154091343
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2455976192101434023}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 48539539807532423}
-  - {fileID: 7494640640348055490}
-  - {fileID: 2126394247718150426}
-  - {fileID: 5993368276354476766}
-  - {fileID: 3257672099575373291}
-  m_Father: {fileID: 1865948717109983522}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3646844699605307383
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7494640640348055490}
-  - component: {fileID: 7811126906119391941}
-  m_Layer: 0
-  m_Name: BasketGameGoall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7494640640348055490
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3646844699605307383}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 223576981154091343}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7811126906119391941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3646844699605307383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8839e74f2a9e7d4290f5e54abd75ffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Title: 
-  Description: 
-  GoalCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  GoalProgressChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  game: {fileID: 0}
---- !u!1 &3654940455324354514
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5993368276354476766}
-  - component: {fileID: 386780729696741096}
+  - component: {fileID: 373669477457361416}
+  - component: {fileID: 4704695603350275137}
   m_Layer: 0
   m_Name: XylophoneGameGoal
   m_TagString: Untagged
@@ -315,28 +196,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5993368276354476766
+--- !u!4 &373669477457361416
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3654940455324354514}
+  m_GameObject: {fileID: 3288722198075627318}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 223576981154091343}
+  m_Father: {fileID: 3063022710476551194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &386780729696741096
+--- !u!114 &4704695603350275137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3654940455324354514}
+  m_GameObject: {fileID: 3288722198075627318}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8839e74f2a9e7d4290f5e54abd75ffa, type: 3}
@@ -351,7 +232,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   game: {fileID: 0}
---- !u!1 &4524608062151684469
+--- !u!1 &5632381578400575299
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -359,51 +240,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3895350896474126417}
-  - component: {fileID: 1184445598991959390}
+  - component: {fileID: 7888379708784449281}
+  - component: {fileID: 7215706442710454839}
   m_Layer: 0
-  m_Name: FinalQuest
+  m_Name: TowerGameQuest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3895350896474126417
+--- !u!4 &7888379708784449281
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4524608062151684469}
+  m_GameObject: {fileID: 5632381578400575299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1865948717109983522}
+  m_Father: {fileID: 4880681858824935610}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1184445598991959390
+--- !u!114 &7215706442710454839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4524608062151684469}
+  m_GameObject: {fileID: 5632381578400575299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44479086bc47b3b45a8e453f24a008c1, type: 3}
+  m_Script: {fileID: 11500000, guid: fc9225fd6c3eb684d94fc11cf6eeb44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: 
-  Description: 
+  Title: TowerGameQuest
+  Description: TowerGameQuest Desc
   isReached: 0
   QuestCompleted:
     m_PersistentCalls:
       m_Calls: []
-  Goals: []
-  LoadScene: 6
---- !u!1 &5492594985337972923
+  Goals:
+  - {fileID: 4241890401403430062}
+--- !u!1 &6036867273062647667
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -411,37 +292,124 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2126394247718150426}
-  - component: {fileID: 6585869801183666903}
+  - component: {fileID: 3063022710476551194}
   m_Layer: 0
-  m_Name: Kasha
+  m_Name: Goals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2126394247718150426
+--- !u!4 &3063022710476551194
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5492594985337972923}
+  m_GameObject: {fileID: 6036867273062647667}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1469238775994054163}
+  - {fileID: 355762864052766551}
+  - {fileID: 373669477457361416}
+  - {fileID: 2110365247099151078}
+  m_Father: {fileID: 4880681858824935610}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6710398441767619694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2310131221896512135}
+  - component: {fileID: 877403516351681422}
+  m_Layer: 0
+  m_Name: XylophoneGameQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2310131221896512135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6710398441767619694}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4880681858824935610}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &877403516351681422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6710398441767619694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9225fd6c3eb684d94fc11cf6eeb44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Title: XylophoneGameQuest
+  Description: XylophoneGameQuest Desc
+  isReached: 0
+  QuestCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  Goals:
+  - {fileID: 4704695603350275137}
+--- !u!1 &6759974962838923967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1469238775994054163}
+  - component: {fileID: 4241890401403430062}
+  m_Layer: 0
+  m_Name: TowerGameGoal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1469238775994054163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6759974962838923967}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 223576981154091343}
+  m_Father: {fileID: 3063022710476551194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6585869801183666903
+--- !u!114 &4241890401403430062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5492594985337972923}
+  m_GameObject: {fileID: 6759974962838923967}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8839e74f2a9e7d4290f5e54abd75ffa, type: 3}
@@ -456,7 +424,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   game: {fileID: 0}
---- !u!1 &5626214377820122112
+--- !u!1 &9035503393354552743
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -464,204 +432,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2632052110393929262}
-  - component: {fileID: 1333418206130075511}
+  - component: {fileID: 355762864052766551}
+  - component: {fileID: 8784897912234838444}
   m_Layer: 0
-  m_Name: TowerGameQuest
+  m_Name: KashaGameGoal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2632052110393929262
+--- !u!4 &355762864052766551
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5626214377820122112}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1865948717109983522}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1333418206130075511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5626214377820122112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc9225fd6c3eb684d94fc11cf6eeb44d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Title: TowerGameQuest
-  Description: TowerGameQuest Desc
-  isReached: 0
-  QuestCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  Goals:
-  - {fileID: 4601605334270789232}
---- !u!1 &6191800364525605487
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1865948717109983522}
-  - component: {fileID: 7797827442957351165}
-  m_Layer: 0
-  m_Name: QuestManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1865948717109983522
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6191800364525605487}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.244828, y: 4.144331, z: -1.425413}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3895350896474126417}
-  - {fileID: 7719079969940387803}
-  - {fileID: 8778588562119265878}
-  - {fileID: 2632052110393929262}
-  - {fileID: 4780208141648593627}
-  - {fileID: 175804807331665402}
-  - {fileID: 223576981154091343}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7797827442957351165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6191800364525605487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2abac35869c1c9e47a870d955620952c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsSequenceMode: 0
-  quests:
-  - {fileID: 7555882045387727734}
-  - {fileID: 3764898292196862815}
-  - {fileID: 1333418206130075511}
-  ALLQUESTCOMPLETED:
-    m_PersistentCalls:
-      m_Calls: []
-  AddedNewQuest:
-    m_PersistentCalls:
-      m_Calls: []
-  CurrentQuest: {fileID: 0}
---- !u!1 &7023740449342963383
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4780208141648593627}
-  - component: {fileID: 4612351843131103137}
-  m_Layer: 0
-  m_Name: XylophoneGameQuest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4780208141648593627
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7023740449342963383}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1865948717109983522}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4612351843131103137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7023740449342963383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc9225fd6c3eb684d94fc11cf6eeb44d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Title: XylophoneGameQuest
-  Description: XylophoneGameQuest Desc
-  isReached: 0
-  QuestCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  Goals:
-  - {fileID: 0}
---- !u!1 &7255873390653205676
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 48539539807532423}
-  - component: {fileID: 4601605334270789232}
-  m_Layer: 0
-  m_Name: TowerGameGoal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &48539539807532423
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7255873390653205676}
+  m_GameObject: {fileID: 9035503393354552743}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 223576981154091343}
+  m_Father: {fileID: 3063022710476551194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4601605334270789232
+--- !u!114 &8784897912234838444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7255873390653205676}
+  m_GameObject: {fileID: 9035503393354552743}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8839e74f2a9e7d4290f5e54abd75ffa, type: 3}
@@ -669,6 +470,111 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: 
   Description: 
+  GoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  GoalProgressChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  game: {fileID: 0}
+--- !u!1 &9049551927073804615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4125710313486742520}
+  - component: {fileID: 2300930395929187090}
+  m_Layer: 0
+  m_Name: FinalQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4125710313486742520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9049551927073804615}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4880681858824935610}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2300930395929187090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9049551927073804615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44479086bc47b3b45a8e453f24a008c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Title: 
+  Description: 
+  isReached: 0
+  QuestCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  Goals: []
+  LoadScene: 6
+--- !u!1 &9154870409708705777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2110365247099151078}
+  - component: {fileID: 5272333091067089480}
+  m_Layer: 0
+  m_Name: PaintGameGoal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2110365247099151078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9154870409708705777}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3063022710476551194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5272333091067089480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9154870409708705777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8839e74f2a9e7d4290f5e54abd75ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Title: PaintGameGoal
+  Description: PaintGameGoal
   GoalCompleted:
     m_PersistentCalls:
       m_Calls: []

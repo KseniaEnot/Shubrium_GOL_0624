@@ -10,7 +10,8 @@ public class Quest : MonoBehaviour
 {
     public string Title;
     public string Description;
-    private bool isReached;
+    [SerializeField]
+    private bool isReached=false;
     [HideInInspector]
     public UnityEvent QuestCompleted;
     [SerializeField]
