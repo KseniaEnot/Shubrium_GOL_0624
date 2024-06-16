@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 8666566717007266302}
   - component: {fileID: 7481798773392073374}
   - component: {fileID: 9061767579513137096}
+  - component: {fileID: 1748614118219954984}
   m_Layer: 0
   m_Name: 'Xylophone '
   m_TagString: Untagged
@@ -440,7 +441,8 @@ MonoBehaviour:
   - {fileID: 7857802092720236425}
   ClickableSequence: []
   loseSound: {fileID: 0}
-  winSound: {fileID: 0}
+  RoundWinSound: {fileID: 0}
+  GameWinSound: {fileID: 0}
   PlayFullWinSound: 0
   IsClickable: 0
   roundStateChanged:
@@ -509,6 +511,24 @@ MonoBehaviour:
   NewHighScoreReached:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1748614118219954984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3137397142125804286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &5641819318183281153
 GameObject:
   m_ObjectHideFlags: 0

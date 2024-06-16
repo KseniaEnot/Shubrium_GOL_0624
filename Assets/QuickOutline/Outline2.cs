@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -31,6 +32,7 @@ public class Outline2 : MonoBehaviour {
     get { return outlineMode; }
     set {
       outlineMode = value;
+        OutlineWidth = 2;
       needsUpdate = true;
     }
   }
@@ -320,12 +322,31 @@ public class Outline2 : MonoBehaviour {
     {
         OutlineMode = Mode.OutlineVisible;
         yield return new WaitForEndOfFrame();
-        OutlineWidth = Mathf.Lerp(2, 10, 1f);
-        yield return new WaitForSeconds(1);
-        OutlineWidth = Mathf.Lerp(10, 2, 1f);
-        yield return new WaitForSeconds(1);
-        OutlineWidth = Mathf.Lerp(2, 10, 1f);
-        yield return new WaitForSeconds(1);
+        float t = 2f;
+        while (t < 10f)
+        {
+            OutlineWidth = t;
+            t +=Time.deltaTime*8f;
+            yield return new WaitForEndOfFrame();
+        }
+        while (t > 2f)
+        {
+            OutlineWidth = t;
+            t -= Time.deltaTime * 8f;
+            yield return new WaitForEndOfFrame();
+        }
+        while (t < 10f)
+        {
+            OutlineWidth = t;
+            t += Time.deltaTime * 8f;
+            yield return new WaitForEndOfFrame();
+        }
+        while (t > 0f)
+        {
+            OutlineWidth = t;
+            t -= Time.deltaTime * 8f;
+            yield return new WaitForEndOfFrame();
+        }
         OutlineMode = Mode.OutlineHidden;
     }
 }

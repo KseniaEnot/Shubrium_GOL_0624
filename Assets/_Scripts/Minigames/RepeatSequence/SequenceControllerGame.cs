@@ -6,7 +6,20 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
+public enum RoundState
+{
+    gameStarting,
+    playingSounds,
+    roundStarting,
+    playing,
+    lost,
+}
+public enum GameMode
+{
+    endless,
+    byScore,
+    byTimeINDEVELOPINGDONTUSE
+}
 public class SequenceControllerGame : MiniGame
 {
     [SerializeField]
@@ -19,29 +32,29 @@ public class SequenceControllerGame : MiniGame
     public List<KsilophoneButtonInteractable> ClickableSequence;
     [HideInInspector]
     protected AudioSource audioSource;
+    [SerializeField]
     public AudioClip loseSound;
-    public AudioClip winSound;
+    [SerializeField]
+    public AudioClip RoundWinSound;
+    [SerializeField]
+    public AudioClip GameWinSound;
     public bool PlayFullWinSound;
     [HideInInspector]
     public bool IsClickable;
     public UnityEvent<RoundState> roundStateChanged;
     protected ScoreManager ScoreManager;
+    protected RoundState RoundState
+    {
+        get { return roundState; }
+        set
+        {
+            roundState = value;
+            roundStateChanged.Invoke(roundState);
+        }
+    }
     protected RoundState roundState;
     protected int CurrentNum;
-    public enum RoundState
-    {
-        gameStarting,
-        playingSounds,
-        roundStarting,
-        playing,
-        lost,
-    }
-    public enum GameMode
-    {
-        endless,
-        byScore,
-        byTimeINDEVELOPINGDONTUSE
-    }
+   
     protected virtual void Start()
     {
         audioSource =GetComponent<AudioSource>();
@@ -52,7 +65,9 @@ public class SequenceControllerGame : MiniGame
         {
             item.Clicked.AddListener(OnClickableClick);
         }
+        SetCatsClickable(false);
         ScoreManager = GetComponent<ScoreManager>();
+        Outline.state = OutlineState.show;
     }
     public override void StartGame()
     {
@@ -99,8 +114,7 @@ public class SequenceControllerGame : MiniGame
     }
     private void SetRoundState(RoundState state)
     {
-        roundState = state;
-        roundStateChanged.Invoke(roundState);
+        RoundState = state;
     }
 
     private IEnumerator PlayStartSoundSequence()
@@ -109,10 +123,10 @@ public class SequenceControllerGame : MiniGame
         SetCatsClickable(false);
         for (int i = 0; i < ClickableSequence.Count; i++)
         {
-            ClickableSequence[i].Click();
+            ClickableSequence[i].Play();
             yield return new WaitForSeconds(ClickableSequence[i].SoundLength);
         }
-        SetRoundState(roundState = RoundState.roundStarting);
+        SetRoundState(RoundState = RoundState.roundStarting);
         SetCatsClickable(true);
     }
     public void OnClickableClick(KsilophoneButtonInteractable clickable)
@@ -123,7 +137,7 @@ public class SequenceControllerGame : MiniGame
     private void QueueCheck(KsilophoneButtonInteractable cat)
     {
         if (CurrentNum== ClickableSequence.Count) return;
-        if(CurrentNum > 0 && roundState != RoundState.playing)
+        if(CurrentNum > 0 && RoundState != RoundState.playing)
             SetRoundState(RoundState.playing);
         if(cat == ClickableSequence[CurrentNum])
             OnRightAnswer();
@@ -140,20 +154,32 @@ public class SequenceControllerGame : MiniGame
     }
     private IEnumerator OnRoundWin()
     {
-        GameProgressChanged.Invoke(CurrentNum, ScoreToWin);
         ScoreManager.Set(ClickableSequence.Count);
-        audioSource.PlayOneShot(winSound);
+        audioSource.PlayOneShot(RoundWinSound);
         if(PlayFullWinSound)
-            yield return new WaitForSeconds(winSound.length+1f);
+            yield return new WaitForSeconds(RoundWinSound.length+1f);
         else
             yield return new WaitForSeconds(1f);
         audioSource.Stop();
         yield return new WaitForSeconds(0.5f);
-
-        if (gameMode == GameMode.byScore && ScoreManager.Score == ScoreToWin)
-        { Win(); }
-        AddToSequence();
-        StartRound();
+        GameProgressChanged.Invoke(CurrentNum, ScoreToWin);
+        if (ScoreManager.Score == ScoreToWin)
+        {
+            Win();
+        }
+        else
+        {
+            AddToSequence();
+            StartRound();
+        }
+    }
+    public override void Win()
+    {
+        StopGame();
+        base.Win();
+        audioSource.PlayOneShot(GameWinSound);
+        gameMode = GameMode.endless;
+        ScoreToWin = 1000;
     }
     private void OnWrongAnswer()
     {
@@ -161,10 +187,14 @@ public class SequenceControllerGame : MiniGame
         CurrentNum = 0;
         audioSource.PlayOneShot(loseSound);
         SetCatsClickable(false);
-        SetRoundState(roundState = RoundState.lost);
+        SetRoundState(RoundState = RoundState.lost);
+        StopGame();
     }
     private void SetCatsClickable(bool b)
     {
-        IsClickable = b;
+        foreach(var cat in ClickableObjects)
+        {
+            cat.GetComponent<Collider>().enabled = b;
+        }
     }
 }

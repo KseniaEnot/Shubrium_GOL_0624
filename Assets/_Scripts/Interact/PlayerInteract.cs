@@ -85,29 +85,28 @@ public class PlayerInteract : MonoBehaviour {
     {
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit hit;
-
-        // Check if the ray hits anything
         if (Physics.Raycast(ray, out hit, interactRange))
         {
-            if (hit.collider.gameObject.GetComponent<Outline2>() != null)
+            
+            Outline2 outline = (hit.collider.gameObject.GetComponent<Outline2>());
+            if (outline != null)
             {
-                if (_lastObj != null)
+                if (_lastObj != outline)
                 {
-                    _lastObj.enabled = false;
+                    if (_lastObj != null)
+                    {
+                        _lastObj.OutlineMode = Outline2.Mode.OutlineHidden;
+                        _lastObj = null;
+                    }
+                    outline.OutlineMode = Outline2.Mode.OutlineVisible;
+                    _lastObj = outline;
                 }
-                _lastObj = hit.collider.gameObject.GetComponent<Outline2>();
-                _lastObj.enabled = true;
+            }
 
-            }
-            else if (_lastObj != null)
-            {
-                _lastObj.enabled = false;
-                _lastObj = null;
-            }
         }
         else if (_lastObj != null)
         {
-            _lastObj.enabled = false;
+            _lastObj.OutlineMode = Outline2.Mode.OutlineHidden;
             _lastObj = null;
         }
     }

@@ -81,6 +81,8 @@ public class StaffInteractable : MonoBehaviour, IInteractable {
     }
 
     public string GetInteractText() {
+        if (StaffModeNow == StaffMode.grabing)
+            return "Бросить";
         return interactText;
     }
 
