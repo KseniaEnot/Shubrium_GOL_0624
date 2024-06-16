@@ -58,7 +58,7 @@ public class MonologueUI : MonoBehaviour, IInteractable
     {
         if (!isRunning)
         {
-            Player.instance.OnDialogInteract(false, false);
+            Player.instance.OnDialogInteract(true, false);
             sentences = new Queue<string>();
             sentences.Clear();
             Debug.Log("StartDialogue " + gameObject.name);

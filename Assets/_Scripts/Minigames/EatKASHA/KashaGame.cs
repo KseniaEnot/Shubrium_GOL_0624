@@ -15,6 +15,7 @@ namespace Assets._Scripts.Minigames.EatKASHA
         [SerializeField]
         public List<KashaItemInteractable> ItemsToEat;
         private int MaxItems;
+        
         protected void Awake()
         {
             MaxItems = ItemsToEat.Count;
