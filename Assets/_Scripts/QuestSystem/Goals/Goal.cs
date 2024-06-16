@@ -24,6 +24,9 @@ public class Goal : MonoBehaviour
             GoalProgressChanged.Invoke(now, max);
             if (currentAmmount >= requiredAmmount)
             {
+                //но... ведь.. да?.. всё так просто?...
+                CompleteGoal = true;
+                //Complete();
             }
         }
         Debug.Log("GoalProgressChanged");

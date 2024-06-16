@@ -53,7 +53,7 @@ public class QuestsUI : MonoBehaviour
         Debug.Log(scorestr);
         Debug.Log("GoalProgressTEXTCHANGED"+newscore+" "+ max+ " " +i);
     }
-    private List<VisualElement> CompleteLines;
+    private List<VisualElement> CompleteLines = new List<VisualElement>();
     public void OnQuestComleted(int i)
     {
         VisualElement line = new VisualElement();
