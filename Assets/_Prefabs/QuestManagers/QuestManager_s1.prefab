@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44479086bc47b3b45a8e453f24a008c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: 
+  Title: "\u041F\u043E\u043C\u0435\u0447\u0442\u0430\u0442\u044C \u0443 \u043E\u043A\u043D\u0430"
   Description: 
   isReached: 0
   QuestCompleted:
