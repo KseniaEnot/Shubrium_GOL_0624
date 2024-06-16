@@ -12,6 +12,13 @@ public abstract class MiniGame : MonoBehaviour
     public UnityEvent GameWin;
     public UnityEvent<int, int> GameProgressChanged;
     protected bool playing=false;
+    protected void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            StopGame();
+        }
+    }
     public virtual void StartGame()
     {
         GameStarted.Invoke();

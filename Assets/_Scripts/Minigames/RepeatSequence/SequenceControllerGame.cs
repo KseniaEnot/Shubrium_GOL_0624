@@ -43,6 +43,7 @@ public class SequenceControllerGame : MiniGame
     public bool IsClickable;
     public UnityEvent<RoundState> roundStateChanged;
     protected ScoreManager ScoreManager;
+    private bool stop;
     protected RoundState RoundState
     {
         get { return roundState; }
@@ -77,8 +78,10 @@ public class SequenceControllerGame : MiniGame
     }
     public override void StopGame()
     {
-        base.StopGame();    
         SetCatsClickable(false);
+        audioSource.Stop();
+        stop=true;
+        base.StopGame();    
     }
     public void SetUpGame(KsilophoneButtonInteractable[] AvailableCats, int StartedSequenceLength)
     {
@@ -125,6 +128,8 @@ public class SequenceControllerGame : MiniGame
         {
             ClickableSequence[i].Play();
             yield return new WaitForSeconds(ClickableSequence[i].SoundLength);
+            if (stop)
+                break;
         }
         SetRoundState(RoundState = RoundState.roundStarting);
         SetCatsClickable(true);

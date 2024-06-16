@@ -316,15 +316,13 @@ public class Outline2 : MonoBehaviour {
 
     internal void PlayOutlineAnimation()
     {
-
-
         if (!playingAnim)
         { StartCoroutine(OutlineAnimation()); playingAnim = true; }
     }
 
     private IEnumerator OutlineAnimation()
     {
-        OutlineMode = Mode.OutlineVisible;
+        this.enabled = true;
         yield return new WaitForEndOfFrame();
         float t = 2f;
         while (t < 10f)
@@ -351,7 +349,7 @@ public class Outline2 : MonoBehaviour {
             t -= Time.deltaTime * 8f;
             yield return new WaitForEndOfFrame();
         }
-        OutlineMode = Mode.OutlineHidden;
+        this.enabled = false;
         playingAnim = false;
     }
 }
