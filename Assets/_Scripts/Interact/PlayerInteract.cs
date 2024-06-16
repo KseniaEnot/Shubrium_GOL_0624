@@ -109,7 +109,11 @@ public class PlayerInteract : MonoBehaviour {
     public OutlineShowMode outlineMode;
     void ShowOutline(Outline2 outline)
     {
-        switch(outlineMode)
+        if (outline.enabled == false)
+        {
+            outline.enabled=true;
+        }
+        switch (outlineMode)
         {
             case OutlineShowMode.enable:
                 outline.enabled = true;

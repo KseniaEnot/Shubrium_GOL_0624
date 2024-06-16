@@ -97,7 +97,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 86025a968facd544ba2100849959246a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23779839}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
@@ -645,6 +645,10 @@ PrefabInstance:
       value: 33.327
       objectReference: {fileID: 0}
     - target: {fileID: 1089842168035900829, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089842168035900829, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
       propertyPath: outlineMode
       value: 1
       objectReference: {fileID: 0}
@@ -809,6 +813,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1365867853}
     - target: {fileID: 6934712024466939447, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934712024466939447, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
       propertyPath: outlineMode
       value: 1
       objectReference: {fileID: 0}
@@ -883,6 +891,10 @@ PrefabInstance:
     - target: {fileID: 8802160157470400451, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218546753036036162, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9218546753036036162, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
       propertyPath: outlineMode
@@ -1457,7 +1469,7 @@ PrefabInstance:
       objectReference: {fileID: 1238243055}
     - target: {fileID: 3288722198075627318, guid: 36f42d716f1d59340b6e9f2aadecf1d9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4241890401403430062, guid: 36f42d716f1d59340b6e9f2aadecf1d9, type: 3}
       propertyPath: game
@@ -1517,11 +1529,11 @@ PrefabInstance:
       objectReference: {fileID: 5485068714752917768}
     - target: {fileID: 6710398441767619694, guid: 36f42d716f1d59340b6e9f2aadecf1d9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6823588967747774539, guid: 36f42d716f1d59340b6e9f2aadecf1d9, type: 3}
       propertyPath: quests.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6823588967747774539, guid: 36f42d716f1d59340b6e9f2aadecf1d9, type: 3}
       propertyPath: quests.Array.data[3]
@@ -3926,7 +3938,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365867848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
@@ -8582,8 +8594,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.020729655
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.003039428
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0004928684
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+      propertyPath: m_Center.y
+      value: -0.001034291
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.00055386306
       objectReference: {fileID: 0}
     - target: {fileID: 6222767191218381388, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
       propertyPath: m_Enabled
