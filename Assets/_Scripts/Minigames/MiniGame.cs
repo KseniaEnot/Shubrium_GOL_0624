@@ -14,7 +14,7 @@ public abstract class MiniGame : MonoBehaviour
     protected bool playing=false;
     protected void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && playing==true)
         {
             StopGame();
         }

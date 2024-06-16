@@ -25,8 +25,8 @@ public class Goal : MonoBehaviour
             if (currentAmmount >= requiredAmmount)
             {
                 //но... ведь.. да?.. всё так просто?...
-                CompleteGoal = true;
-                //Complete();
+                //CompleteGoal = true;
+                Complete();
             }
         }
         Debug.Log("GoalProgressChanged");
@@ -37,6 +37,7 @@ public class Goal : MonoBehaviour
         if (CompleteGoal)
         {
             Complete();
+            CompleteGoal=false;
         }
     }
     public void Complete()

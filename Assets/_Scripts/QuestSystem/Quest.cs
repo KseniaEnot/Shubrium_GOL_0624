@@ -30,7 +30,6 @@ public class Quest : MonoBehaviour
     }
     private void OnGoalCompleted()
     {
-
         Debug.Log("QUes's Goal completed");
         foreach (var goal in Goals)
         {

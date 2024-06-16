@@ -351,5 +351,6 @@ public class Outline2 : MonoBehaviour {
         }
         this.enabled = false;
         playingAnim = false;
+        OutlineWidth = 2f;
     }
 }
