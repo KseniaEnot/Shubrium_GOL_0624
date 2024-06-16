@@ -25,16 +25,13 @@ public class MiniGameInteractable : MonoBehaviour, IInteractable
 
     public void Interact(Transform interactorTransform)
     {
-        StartCoroutine(StartEating());
+        StartCoroutine(StartPlaying());
     }
 
-    private IEnumerator StartEating()
+    private IEnumerator StartPlaying()
     {;   
         Player.instance.OnDialogInteract(false,false);
-        Player.instance.SetNewCam(VirtualCamera1);
-        yield return new WaitForSeconds(1);
-        Player.instance.SetNewCam(VirtualCamera2);
-        yield return new WaitForSeconds(2);
+        yield return StartCoroutine(SuperPuperCameraAnimation());
         var povComponent = VirtualCamera2.GetCinemachineComponent<CinemachinePOV>();
         if (povComponent == null)
         {
@@ -53,5 +50,12 @@ public class MiniGameInteractable : MonoBehaviour, IInteractable
         Player.instance.originCam.enabled = true;
         yield return new WaitForSeconds(2);
         Player.instance.ReturnNormal();
+    }
+    private IEnumerator SuperPuperCameraAnimation()
+    {
+        Player.instance.SetNewCam(VirtualCamera1);
+        yield return new WaitForSeconds(1);
+        Player.instance.SetNewCam(VirtualCamera2);
+        yield return new WaitForSeconds(2);
     }
 }

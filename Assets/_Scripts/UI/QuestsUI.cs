@@ -27,7 +27,7 @@ public class QuestsUI : MonoBehaviour
         foreach(Quest quest in QuestManager.quests)
         {
             int j = i;
-            QuestsLabels[j].text = quest.Title + ": 0/0";
+            QuestsLabels[j].text = quest.Title + ": 0/1";
             quest.QuestCompleted.AddListener(() => OnQuestComleted(j));
             quest.Goals[0].GoalProgressChanged.AddListener((a,b)=>GoalChanged(a,b,j)); ;
             i++;
@@ -53,7 +53,7 @@ public class QuestsUI : MonoBehaviour
         line.style.backgroundColor = Color.black;
         QuestsLabels[i].Add(line);
         int colonIndex = QuestsLabels[i].text.IndexOf(':');
-        QuestsLabels[i].text = QuestsLabels[i].text.Substring(0, colonIndex);
+        QuestsLabels[i].text = QuestsLabels[i].text.Substring(0, colonIndex) + ": 1/1";
         Debug.Log("QuestCompleted");
     }
     public string GetScoreStr(string a)
