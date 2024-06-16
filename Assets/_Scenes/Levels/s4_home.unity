@@ -9001,6 +9001,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1677497802}
     m_Modifications:
+    - target: {fileID: 1184445598991959390, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+      propertyPath: LoadScene
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1333418206130075511, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: Title
       value: PosydaGameQuest
@@ -9093,6 +9097,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1651985603231378126, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
     - {fileID: 3646844699605307383, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+    - {fileID: 1404005568956116174, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+    - {fileID: 7023740449342963383, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+    - {fileID: 3654940455324354514, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+    - {fileID: 708675480838345126, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55ff09a899258784a81009e0de8911d3, type: 3}

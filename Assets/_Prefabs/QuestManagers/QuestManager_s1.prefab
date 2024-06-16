@@ -55,10 +55,21 @@ MonoBehaviour:
   - {fileID: 1007271281532912927}
   - {fileID: 7215706442710454839}
   - {fileID: 184643738076680040}
-  - {fileID: 877403516351681422}
   ALLQUESTCOMPLETED:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 6823588967747774539}
+        m_TargetAssemblyTypeName: QuestManager, Assembly-CSharp
+        m_MethodName: ClearAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 6823588967747774539}
         m_TargetAssemblyTypeName: QuestManager, Assembly-CSharp
         m_MethodName: AddQuest
@@ -71,6 +82,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 4880681858824935610}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: set final collider true
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4880681858824935610}
+        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
+        m_MethodName: set_tag
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: quest ui.show final info
+          m_BoolArgument: 1
+        m_CallState: 2
   AddedNewQuest:
     m_PersistentCalls:
       m_Calls: []
@@ -127,6 +162,60 @@ MonoBehaviour:
       m_Calls: []
   Goals:
   - {fileID: 8784897912234838444}
+--- !u!1 &2890406435652520956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2165212833546408330}
+  - component: {fileID: 6935168978682954017}
+  m_Layer: 0
+  m_Name: LastGoal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2165212833546408330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2890406435652520956}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3063022710476551194}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6935168978682954017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2890406435652520956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dde4afaac7b8a46808a7bd27942703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Title: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0432 \u043E\u043A\u043E\u0448\u043A\u043E"
+  Description: 
+  GoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  GoalProgressChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  CompleteGoal: 0
+  MonologueUI: {fileID: 0}
 --- !u!1 &3270764428202464186
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +320,7 @@ MonoBehaviour:
   GoalProgressChanged:
     m_PersistentCalls:
       m_Calls: []
+  CompleteGoal: 0
   game: {fileID: 0}
 --- !u!1 &5632381578400575299
 GameObject:
@@ -317,6 +407,7 @@ Transform:
   - {fileID: 355762864052766551}
   - {fileID: 373669477457361416}
   - {fileID: 2110365247099151078}
+  - {fileID: 2165212833546408330}
   m_Father: {fileID: 4880681858824935610}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6710398441767619694
@@ -423,6 +514,7 @@ MonoBehaviour:
   GoalProgressChanged:
     m_PersistentCalls:
       m_Calls: []
+  CompleteGoal: 0
   game: {fileID: 0}
 --- !u!1 &9035503393354552743
 GameObject:
@@ -476,6 +568,7 @@ MonoBehaviour:
   GoalProgressChanged:
     m_PersistentCalls:
       m_Calls: []
+  CompleteGoal: 0
   game: {fileID: 0}
 --- !u!1 &9049551927073804615
 GameObject:
@@ -581,4 +674,5 @@ MonoBehaviour:
   GoalProgressChanged:
     m_PersistentCalls:
       m_Calls: []
+  CompleteGoal: 0
   game: {fileID: 0}
