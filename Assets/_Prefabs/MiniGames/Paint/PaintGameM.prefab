@@ -638,6 +638,7 @@ GameObject:
   - component: {fileID: 8823534271750605983}
   - component: {fileID: 5121345913326175613}
   - component: {fileID: 5348016409227121776}
+  - component: {fileID: 1114084793281355574}
   m_Layer: 0
   m_Name: PaintGame
   m_TagString: Untagged
@@ -732,6 +733,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.51, y: 0.1, z: 0.52}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1114084793281355574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3570002244511978216}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4378702613152318300
 GameObject:
   m_ObjectHideFlags: 0

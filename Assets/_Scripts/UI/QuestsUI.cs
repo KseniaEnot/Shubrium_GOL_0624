@@ -61,7 +61,7 @@ public class QuestsUI : MonoBehaviour
         line.style.left = 0;
         line.style.right = 0;
         line.style.top = 17; // положение по середине текста
-        line.style.height = 1;
+        line.style.height = 2;
         line.style.backgroundColor = Color.black;
         QuestsLabels[i].Add(line);
         CompleteLines.Add(line);
