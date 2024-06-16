@@ -120,8 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   containerGameObject: {fileID: 0}
-  interactText: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0432
-    \u043E\u043A\u043E\u0448\u043A\u043E"
+  interactText: "\u041F\u043E\u043C\u0435\u0447\u0442\u0430\u0442\u044C"
   game: {fileID: 0}
   dialogue:
     sentences:
