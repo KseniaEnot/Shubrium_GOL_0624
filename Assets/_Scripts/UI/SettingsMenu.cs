@@ -7,7 +7,7 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class SettingsMenu
+public class SettingsMenu :MonoBehaviour
 {
     enum VolumeType { MasterVolume, MusicVolume, SoundVolume }
     //private UIDocument document;
