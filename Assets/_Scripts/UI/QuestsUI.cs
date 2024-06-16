@@ -28,9 +28,25 @@ public class QuestsUI : MonoBehaviour
         {
             int j = i;
             QuestsLabels[j].text = quest.Title + ": 0/1";
-            quest.QuestCompleted.AddListener(() => OnQuestComleted(j));
+            quest.QuestCompleted.AddListener(() => { });
             quest.Goals[0].GoalProgressChanged.AddListener((a,b)=>GoalChanged(a,b,j)); ;
             i++;
+        }
+        addLines();
+    }
+    private void addLines()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            VisualElement line = new VisualElement();
+            line.style.position = Position.Absolute;
+            line.style.left = 0;
+            line.style.right = 0;
+            line.style.top = 17; // положение по середине текста
+            line.style.height = 0;
+            line.style.backgroundColor = Color.black;
+            QuestsLabels[i].Add(line);
+            CompleteLines.Add(line);
         }
     }
     public void SetFinalQuestInfo()
@@ -56,18 +72,13 @@ public class QuestsUI : MonoBehaviour
     private List<VisualElement> CompleteLines = new List<VisualElement>();
     public void OnQuestComleted(int i)
     {
-        VisualElement line = new VisualElement();
-        line.style.position = Position.Absolute;
-        line.style.left = 0;
-        line.style.right = 0;
-        line.style.top = 17; // положение по середине текста
-        line.style.height = 2;
-        line.style.backgroundColor = Color.black;
-        QuestsLabels[i].Add(line);
-        CompleteLines.Add(line);
-        int colonIndex = QuestsLabels[i].text.IndexOf(':');
-        QuestsLabels[i].text = QuestsLabels[i].text.Substring(0, colonIndex) + ": 1/1";
-        Debug.Log("QuestCompleted");
+        if (i < QuestsLabels.Count && i >= 0)
+        {
+            int colonIndex = QuestsLabels[i].text.IndexOf(':');
+            QuestsLabels[i].text = QuestsLabels[i].text.Substring(0, colonIndex) + ": 1/1";
+            CompleteLines[i].style.height = 2;
+            Debug.Log("QuestCompleted");
+        }
     }
     public string GetScoreStr(string a)
     {
