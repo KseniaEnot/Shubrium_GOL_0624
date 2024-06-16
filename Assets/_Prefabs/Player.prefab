@@ -244,7 +244,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4447884926445956609}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -318,7 +318,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544d7826790ac114d8d8376ba37973e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originCam: {fileID: 0}
+  originCam: {fileID: 6975990888520695598}
+  NewCamSetted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4473328252688518064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +340,7 @@ MonoBehaviour:
   crouchMoveSpeed: 4
   crouchDownSpeed: 0.2
   crouchHeight: 0.68
-  standingHeight: 1
+  standingHeight: 2
   smoothCrouch: 1
   jumpCrouching: 1
   jumpForce: 10
@@ -356,6 +359,8 @@ MonoBehaviour:
   crouch: 122
   outlineKey: 113
   DrawOutlineRange: 5
+  Pause: 27
+  StopGame: 32
   areWeGrounded: 1
   areWeCrouching: 0
   currentSpeed: 0

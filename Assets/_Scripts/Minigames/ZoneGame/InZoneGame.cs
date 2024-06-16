@@ -12,7 +12,6 @@ namespace Assets._Scripts.Minigames.TowerGame
 {
     internal class InZoneGame : MiniGame
     {
-        private bool IsWinning;
         private float timeToWin;
         [SerializeField]
         public List<GameZoneObjInteractable> AllInZoneObjects;
@@ -35,14 +34,12 @@ namespace Assets._Scripts.Minigames.TowerGame
             {
                 if (WinCoroutine != null)
                     StopCoroutine(WinCoroutine);
-                IsWinning = false;
             }
         }
 
         private IEnumerator WinCheck()
         {
             timeToWin = 3f;
-            IsWinning = true;
             while(timeToWin>0)
             {
                 timeToWin-= Time.deltaTime;

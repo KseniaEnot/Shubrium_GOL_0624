@@ -1,5 +1,6 @@
 ﻿using Cinemachine;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,15 @@ namespace Assets._Scripts.Movement
         {
             CameraController.enabled = camera;
             PlayerMovement.enabled = movement;
+        }
+        public void ReturnNormal(float delay)
+        {
+            StartCoroutine(ReturnNormalCoroutine(delay));
+        }
+        private IEnumerator ReturnNormalCoroutine(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            ReturnNormal();
         }
         public void ReturnNormal()
         {
