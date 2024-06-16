@@ -441,9 +441,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: "\u0445\u0440\u0443\u043C"
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
   Eated:
     m_PersistentCalls:
       m_Calls: []
+  disableOnInteract: 1
 --- !u!1001 &412274801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -810,9 +814,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: "\u0445\u0440\u0443\u043C"
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
   Eated:
     m_PersistentCalls:
       m_Calls: []
+  disableOnInteract: 1
 --- !u!1 &776152517
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,9 +889,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: "\u0445\u0440\u0443\u043C"
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
   Eated:
     m_PersistentCalls:
       m_Calls: []
+  disableOnInteract: 1
 --- !u!1 &798166310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,9 +1037,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: "\u0445\u0440\u0443\u043C"
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
   Eated:
     m_PersistentCalls:
       m_Calls: []
+  disableOnInteract: 1
 --- !u!1 &1124904851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +1109,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124904851}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
@@ -4284,7 +4300,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4471638366194697495}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
@@ -4948,7 +4964,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274016133202039577}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
@@ -6026,7 +6042,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2599002507321772445}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
