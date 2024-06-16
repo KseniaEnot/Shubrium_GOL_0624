@@ -26,6 +26,7 @@ public class MainButtons
         Exitbtn = container.Q("Exit") as Button;
         Playbtn.clicked += () =>
         {
+            Debug.Log("Load scen");
             Loader.Load(Loader.Scene.s1_home);
         };
         Loadbtn.clicked += () =>
