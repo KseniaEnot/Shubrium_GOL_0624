@@ -658,7 +658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1577830810724764148, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1651985603231378126, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: m_Name
@@ -712,6 +712,10 @@ PrefabInstance:
       propertyPath: Title
       value: "\u041F\u043E\u0434\u043F\u0438\u0441\u0430\u0442\u044C \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B"
       objectReference: {fileID: 0}
+    - target: {fileID: 4601605334270789232, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+      propertyPath: game
+      value: 
+      objectReference: {fileID: 2130660395}
     - target: {fileID: 5492594985337972923, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: m_Name
       value: FoodGameGoall
@@ -742,7 +746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7255873390653205676, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7555882045387727734, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: Goals.Array.data[0]
@@ -750,7 +754,7 @@ PrefabInstance:
       objectReference: {fileID: 412274803}
     - target: {fileID: 7797827442957351165, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: quests.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7797827442957351165, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: quests.Array.data[0]
@@ -760,6 +764,10 @@ PrefabInstance:
       propertyPath: quests.Array.data[1]
       value: 
       objectReference: {fileID: 30597635}
+    - target: {fileID: 7797827442957351165, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+      propertyPath: quests.Array.data[2]
+      value: 
+      objectReference: {fileID: 510809697}
     - target: {fileID: 7797827442957351165, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: ALLQUESTCOMPLETED.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -885,7 +893,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2016432791}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7023740449342963383, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+    - {fileID: 1404005568956116174, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+    - {fileID: 3654940455324354514, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+    - {fileID: 708675480838345126, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
@@ -1298,6 +1310,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &510809697 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7555882045387727734, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+  m_PrefabInstance: {fileID: 412274801}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9225fd6c3eb684d94fc11cf6eeb44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &522264475
@@ -4540,6 +4563,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3924733709329345148, guid: c5a8c1507ee8a2646ab913160af7302f, type: 3}
   m_PrefabInstance: {fileID: 2120345086}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2130660395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 68496935327015221, guid: c5a8c1507ee8a2646ab913160af7302f, type: 3}
+  m_PrefabInstance: {fileID: 2120345086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056c87e807ccd364ca2d7d0d8e2c0906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2142195181
 GameObject:
   m_ObjectHideFlags: 3

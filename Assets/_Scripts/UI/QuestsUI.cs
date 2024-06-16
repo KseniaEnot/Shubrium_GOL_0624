@@ -1,10 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEngine.Windows;
 
 public class QuestsUI : MonoBehaviour
 {
@@ -28,7 +24,7 @@ public class QuestsUI : MonoBehaviour
         {
             int j = i;
             QuestsLabels[j].text = quest.Title + ": 0/1";
-            quest.QuestCompleted.AddListener(() => { });
+            quest.QuestCompleted.AddListener(() => OnQuestComleted(j));
             quest.Goals[0].GoalProgressChanged.AddListener((a,b)=>GoalChanged(a,b,j)); ;
             i++;
         }
@@ -65,6 +61,7 @@ public class QuestsUI : MonoBehaviour
         int colonIndex = QuestsLabels[i].text.IndexOf(':');
         string scorestr = GetScoreStr(QuestsLabels[i].text);
         scorestr = ": " + newscore + "/" + max;
+        Debug.Log("QuestsLabelsCoint:"+QuestsLabels.Count);
         QuestsLabels[i].text = QuestsLabels[i].text.Substring(0, colonIndex) + scorestr;
         Debug.Log(scorestr);
         Debug.Log("GoalProgressTEXTCHANGED"+newscore+" "+ max+ " " +i);
@@ -75,7 +72,9 @@ public class QuestsUI : MonoBehaviour
         if (i < QuestsLabels.Count && i >= 0)
         {
             int colonIndex = QuestsLabels[i].text.IndexOf(':');
-            QuestsLabels[i].text = QuestsLabels[i].text.Substring(0, colonIndex) + ": 1/1";
+            if (colonIndex == -1 || colonIndex == QuestsLabels[i].text.Length - 1) return;
+            Debug.Log("QuestsLabelsCOunt" + QuestsLabels.Count);
+            QuestsLabels[i].text = QuestsLabels[i].text.Substring(0, colonIndex) + ": 1/1"; 
             CompleteLines[i].style.height = 2;
             Debug.Log("QuestCompleted");
         }
