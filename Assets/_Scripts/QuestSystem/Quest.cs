@@ -1,11 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine.Events;
 using UnityEngine;
-using static Unity.VisualScripting.Dependencies.Sqlite.SQLite3;
-using UnityEngine.Rendering.UI;
-using System.Linq;
 public class Quest : MonoBehaviour
 {
     public string Title;
