@@ -97,7 +97,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 86025a968facd544ba2100849959246a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -628,6 +628,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1587572079}
     m_Modifications:
+    - target: {fileID: 1184445598991959390, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+      propertyPath: Title
+      value: "\u041F\u043E\u043C\u0435\u0447\u0442\u0430\u0442\u044C \u0443 \u043E\u043A\u043D\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 1184445598991959390, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: LoadScene
       value: 3
@@ -1657,9 +1661,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7876830150698658099, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+      propertyPath: interactText
+      value: "\u041F\u043E\u043C\u0435\u0447\u0442\u0430\u0442\u044C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876830150698658099, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
       propertyPath: containerGameObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 204449873}
     - target: {fileID: 7876830150698658099, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
       propertyPath: dialogue.sentences.Array.size
       value: 8

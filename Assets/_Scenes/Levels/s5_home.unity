@@ -97,7 +97,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 86025a968facd544ba2100849959246a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -417,12 +417,28 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: jump
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: crouch
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: sprint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: crouchHeight
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: smoothCrouch
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: walkMoveSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: standingHeight
@@ -3921,7 +3937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9225fd6c3eb684d94fc11cf6eeb44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: "\u0412\u0441\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u0432\u0440\u0435\u043C\u044F"
+  Title: "\u0412\u0441\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u0446\u0435\u043D\u043D\u043E\u0441\u0442\u044C"
   Description: KashaGameQuest desc
   isReached: 0
   QuestCompleted:
@@ -7833,8 +7849,28 @@ PrefabInstance:
       value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0037840896
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+      propertyPath: m_Size.z
+      value: 0.031094486
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0004928681
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+      propertyPath: m_Center.y
+      value: -0.0014066204
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698826400422743732, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0005538624
       objectReference: {fileID: 0}
     - target: {fileID: 7876830150698658099, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
       propertyPath: m_Enabled
@@ -14338,6 +14374,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2091292235}
     m_Modifications:
     - target: {fileID: 1184445598991959390, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+      propertyPath: Title
+      value: "\u041F\u043E\u043C\u0435\u0447\u0442\u0430\u0442\u044C \u0443 \u043E\u043A\u043D\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184445598991959390, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: Goals.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -14405,6 +14445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6792976897214549892, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
+      propertyPath: MonologueUI
+      value: 
+      objectReference: {fileID: 1970072678}
     - target: {fileID: 7555882045387727734, guid: 55ff09a899258784a81009e0de8911d3, type: 3}
       propertyPath: Title
       value: "\u0412\u0441\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u0434\u0435\u0442\u0441\u0442\u0432\u043E"
@@ -15018,6 +15062,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967168673}
   m_Mesh: {fileID: -4670520448709566470, guid: 135e907523ca1584db464ec1be0e2427, type: 3}
+--- !u!114 &1970072678 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7876830150698658099, guid: 296142f2624efd545a8a32f659dff62c, type: 3}
+  m_PrefabInstance: {fileID: 945219256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d85e18451de2ae41b1f863c3145cbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1978964483
 GameObject:
   m_ObjectHideFlags: 0
