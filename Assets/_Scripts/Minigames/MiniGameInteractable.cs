@@ -32,6 +32,7 @@ public class MiniGameInteractable : MonoBehaviour, IInteractable
     {;   
         Player.instance.OnDialogInteract(false,false);
         gameObject.GetComponent<Collider>().enabled = false;
+        gameObject.GetComponent<Outline2>().enabled = false;
         yield return StartCoroutine(SuperPuperCameraAnimation());
         var povComponent = VirtualCamera2.GetCinemachineComponent<CinemachinePOV>();
         if (povComponent == null)

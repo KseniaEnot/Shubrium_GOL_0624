@@ -15,8 +15,6 @@ public class KsilophoneButtonInteractable : MonoBehaviour, IInteractable
     [SerializeField]    
     public Nota Nota;
     public  AudioClip Sound;
-    [HideInInspector]
-    public bool clickAvailable;
     private Button button;
     private AudioSource AudioSource;
     public UnityEvent<KsilophoneButtonInteractable> Clicked;
@@ -45,12 +43,8 @@ public class KsilophoneButtonInteractable : MonoBehaviour, IInteractable
     }
     public void Click()
     {
-        if (clickAvailable)
-        {
-            //Owner.OnClickableClick(this);
-            Clicked.Invoke(this);
-            Play();
-        }
+        Clicked.Invoke(this);
+        Play();
     }
     public void Play()
     {
@@ -64,7 +58,7 @@ public class KsilophoneButtonInteractable : MonoBehaviour, IInteractable
         {
             if (outline != null)
             {
-                outline.OutlineMode = Outline2.Mode.OutlineVisible;
+                outline.enabled = true;
                 //spriteRenderer.sprite = OutlineSprite;
                 Invoke("HideOutline", SoundLength);
             }
@@ -73,12 +67,13 @@ public class KsilophoneButtonInteractable : MonoBehaviour, IInteractable
     private void HideOutline()
     {
         //spriteRenderer.sprite = NoOutlineSprite;
-        outline.OutlineMode = Outline2.Mode.OutlineHidden;
+        outline.enabled = false;
     }
 
     public void Interact(Transform interactorTransform)
     {
         Click();
+        Debug.Log("Ksilo pushed");
     }
 
     public string GetInteractText()

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
+using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour {
     [SerializeField]
@@ -15,7 +16,7 @@ public class PlayerInteract : MonoBehaviour {
     public StaffInteractable HoldingObj;
     [SerializeField]
     private bool RayMethod;
-    private Outline2 _lastObj;
+    private Outline2 _lastObjOutline;
     private bool Charging;
     private float chargeTime;
     private void Update()
@@ -36,7 +37,7 @@ public class PlayerInteract : MonoBehaviour {
             Charging = false;
             Drop();
 
-         }
+        }
         if (Input.GetKeyDown(InteractKey))
         {
             if (HoldingObj != null)
@@ -60,63 +61,90 @@ public class PlayerInteract : MonoBehaviour {
 
     public IInteractable GetInteractableObject()
     {
-            IInteractable Interactable;
-            if (RayMethod)
+        IInteractable Interactable;
+        if (RayMethod)
+        {
+            Interactable = GetRayInteractable();
+        }
+        else
+        {
+            List<IInteractable> interactableList = new List<IInteractable>();
+            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+            foreach (Collider collider in colliderArray)
             {
-                Interactable = GetRayInteractable();
-            }
-            else
-            {
-                List<IInteractable> interactableList = new List<IInteractable>();
-                Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
-                foreach (Collider collider in colliderArray)
+                if (collider.TryGetComponent(out IInteractable interactable))
                 {
-                    if (collider.TryGetComponent(out IInteractable interactable))
-                    {
-                        interactableList.Add(interactable);
-                    }
+                    interactableList.Add(interactable);
                 }
-                Interactable = GetClosestInteractable(interactableList);
             }
-            return Interactable;
+            Interactable = GetClosestInteractable(interactableList);
+        }
+        return Interactable;
     }
-    
+
     private void setOutline()
     {
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, interactRange))
         {
-            
-            Outline2 outline = (hit.collider.gameObject.GetComponent<Outline2>());
+            Outline2 outline = hit.collider.gameObject.GetComponent<Outline2>();
             if (outline != null)
             {
-                if (_lastObj != outline)
-                {
-                    if (_lastObj != null)
-                    {
-                        _lastObj.OutlineMode = Outline2.Mode.OutlineHidden;
-                        _lastObj = null;
-                    }
-                    outline.OutlineMode = Outline2.Mode.OutlineVisible;
-                    _lastObj = outline;
-                }
+                if (_lastObjOutline == outline)
+                    return;
+                HideLastOutline();
+                ShowOutline(outline);
             }
+        }
+        else HideLastOutline();
 
-        }
-        else if (_lastObj != null)
-        {
-            _lastObj.OutlineMode = Outline2.Mode.OutlineHidden;
-            _lastObj = null;
-        }
     }
-
+    public enum OutlineShowMode
+    {
+        enable,
+        setWidth,
+        mode
+    }
+    public OutlineShowMode outlineMode;
+    void ShowOutline(Outline2 outline)
+    {
+        switch(outlineMode)
+        {
+            case OutlineShowMode.enable:
+                outline.enabled = true;
+                break;
+            case OutlineShowMode.setWidth:
+                outline.OutlineWidth = 2f;
+                break;
+            case OutlineShowMode.mode:
+                outline.OutlineMode = Outline2.Mode.OutlineVisible;
+            break;
+        }
+        _lastObjOutline = outline;
+    }
+    private void HideLastOutline()
+    {
+        if (_lastObjOutline == null)
+            return;
+        switch (outlineMode)
+        {
+            case OutlineShowMode.enable:
+                _lastObjOutline.enabled = false;
+                break;
+            case OutlineShowMode.setWidth:
+                _lastObjOutline.OutlineWidth = 0f;
+                break;
+            case OutlineShowMode.mode:
+                _lastObjOutline.OutlineMode = Outline2.Mode.OutlineHidden;
+                break;
+        }
+        _lastObjOutline= null;
+    }
     private IInteractable GetRayInteractable()
     {
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit hit;
-
-        // Check if the ray hits anything
         if (Physics.Raycast(ray, out hit, interactRange)) { 
 
             IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
