@@ -31,6 +31,7 @@ public class MiniGameInteractable : MonoBehaviour, IInteractable
     private IEnumerator StartPlaying()
     {;   
         Player.instance.OnDialogInteract(false,false);
+        gameObject.GetComponent<Collider>().enabled = false;
         yield return StartCoroutine(SuperPuperCameraAnimation());
         var povComponent = VirtualCamera2.GetCinemachineComponent<CinemachinePOV>();
         if (povComponent == null)
@@ -38,7 +39,6 @@ public class MiniGameInteractable : MonoBehaviour, IInteractable
             VirtualCamera2.AddCinemachineComponent<CinemachinePOV>();
         }
         MiniGame.StartGame();
-        gameObject.GetComponent<Collider>().enabled = false;
         MiniGame.GameStoped.AddListener(() => {
             StartCoroutine(OnGameStop());
         });
@@ -54,7 +54,7 @@ public class MiniGameInteractable : MonoBehaviour, IInteractable
     private IEnumerator SuperPuperCameraAnimation()
     {
         Player.instance.SetNewCam(VirtualCamera1);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         Player.instance.SetNewCam(VirtualCamera2);
         yield return new WaitForSeconds(2);
     }

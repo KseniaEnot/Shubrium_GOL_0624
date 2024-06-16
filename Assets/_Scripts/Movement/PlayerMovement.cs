@@ -70,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("The key used to Outline")]
     public KeyCode outlineKey = KeyCode.Q;
     public float DrawOutlineRange;
+    public KeyCode Pause = KeyCode.Escape;
+    public KeyCode StopGame = KeyCode.Space;
     //----------------------------------------------------
     [Space]
     [Header("Debug Info")]

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets._Scripts.Movement
 {
@@ -17,6 +18,7 @@ namespace Assets._Scripts.Movement
         PlayerInteract PlayerInteract;
         [SerializeField]
         public CinemachineVirtualCamera originCam;
+        public UnityEvent NewCamSetted;
         public void Awake()
          {
             instance = this;

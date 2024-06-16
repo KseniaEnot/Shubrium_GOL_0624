@@ -520,6 +520,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2834286459276259783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6839642229464369880}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6839642229464369880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2834286459276259783}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0912023, y: -1.2221404, z: -1.0539665}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8153304690531745969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3268942558818063977
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,6 +637,8 @@ GameObject:
   - component: {fileID: 5654367231950280697}
   - component: {fileID: 8823534271750605983}
   - component: {fileID: 5121345913326175613}
+  - component: {fileID: 2134733983552347182}
+  - component: {fileID: 5348016409227121776}
   m_Layer: 0
   m_Name: PaintGame
   m_TagString: Untagged
@@ -679,6 +712,64 @@ MonoBehaviour:
   VirtualCamera2: {fileID: 1139251591578199768}
   MiniGame: {fileID: 8823534271750605983}
   Text: "\u041F\u043E\u0440\u0438\u0441\u043E\u0432\u0430\u0442\u044C"
+--- !u!114 &2134733983552347182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3570002244511978216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d85e18451de2ae41b1f863c3145cbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containerGameObject: {fileID: 0}
+  interactText: "\u0420\u0438\u0441\u043E\u0432\u0430\u0442\u044C"
+  game: {fileID: 8823534271750605983}
+  dialogue:
+    sentences:
+    - "\u042F \u0441\u043E\u0432\u0441\u0435\u043C \u0437\u0430\u0431\u044B\u043B
+      \u0434\u043E\u0440\u0438\u0441\u043E\u0432\u0430\u0442\u044C \u044D\u0442\u0443
+      \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443. \u042F \u0434\u043E\u043B\u0436\u0435\u043D
+      \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C."
+  mnologueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5121345913326175613}
+        m_TargetAssemblyTypeName: MiniGameInteractable, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isRunning: 0
+--- !u!65 &5348016409227121776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3570002244511978216}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.51, y: 0.1, z: 0.52}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4378702613152318300
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,9 +779,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8153304690531745969}
-  - component: {fileID: 2181972759149924894}
-  - component: {fileID: 9036269660483621054}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PaintGameM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,54 +800,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5654367231950280697}
+  - {fileID: 6839642229464369880}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2181972759149924894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4378702613152318300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d85e18451de2ae41b1f863c3145cbff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  containerGameObject: {fileID: 0}
-  interactText: 
-  game: {fileID: 8823534271750605983}
-  dialogue:
-    sentences:
-    - "\u042F \u0441\u043E\u0432\u0441\u0435\u043C \u0437\u0430\u0431\u044B\u043B
-      \u0434\u043E\u0440\u0438\u0441\u043E\u0432\u0430\u0442\u044C \u044D\u0442\u0443
-      \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443. \u042F \u0434\u043E\u043B\u0436\u0435\u043D
-      \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C."
-  mnologueEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  isRunning: 0
---- !u!65 &9036269660483621054
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4378702613152318300}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.8224182}
-  m_Center: {x: 0, y: 0, z: -0.08879089}
 --- !u!1 &4524768546302631095
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,8 +1008,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5439537911453449237}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06796709, y: -0.7983095, z: 0.37823182, w: 0.46370596}
-  m_LocalPosition: {x: 1.1915727, y: 0.9543165, z: 0.3385582}
+  m_LocalRotation: {x: 0.030210493, y: -0.903321, z: 0.41341525, w: 0.11039176}
+  m_LocalPosition: {x: 0.003, y: 0.9543165, z: 0.3385582}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

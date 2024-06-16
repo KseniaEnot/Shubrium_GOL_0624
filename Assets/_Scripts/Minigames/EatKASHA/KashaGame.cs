@@ -20,7 +20,7 @@ namespace Assets._Scripts.Minigames.EatKASHA
             MaxItems = ItemsToEat.Count;
             foreach (var item in ItemsToEat)
             {
-                item.GetComponent<Collider>().enabled = false;
+                item.GetComponent<Collider>().enabled = false;  
             }
         }
         public override void StartGame()

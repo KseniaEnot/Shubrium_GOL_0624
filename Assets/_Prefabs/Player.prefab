@@ -349,8 +349,8 @@ MonoBehaviour:
   extraGravity: 0.1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
-  GroundCheckRange: 0.2
+    m_Bits: 4294967295
+  GroundCheckRange: 1
   jump: 32
   sprint: 304
   crouch: 122

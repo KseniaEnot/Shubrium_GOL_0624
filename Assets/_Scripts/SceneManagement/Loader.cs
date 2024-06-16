@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public static class Loader
 {
     private class LoadingMonoBehaviour : MonoBehaviour { }

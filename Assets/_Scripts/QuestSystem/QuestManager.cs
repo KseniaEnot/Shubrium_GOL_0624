@@ -13,7 +13,7 @@ public class QuestManager : MonoBehaviour
     public List<Quest> quests = new List<Quest>();
     private int questNum=0;
     public UnityEvent ALLQUESTCOMPLETED;
-    public UnityEvent NewQuest;
+    public UnityEvent AddedNewQuest;
     public Quest CurrentQuest;
     private void Awake()
     {
@@ -26,9 +26,13 @@ public class QuestManager : MonoBehaviour
     public void AddQuest(Quest newQuest)
     {
         quests.Add(newQuest);
-        NewQuest.Invoke();
+        AddedNewQuest.Invoke();
     }
-    public void OnQuestCompleted()
+    public void ClearAll()
+    {
+        quests.Clear();
+    }
+    private void OnQuestCompleted()
     {
         if(IsSequenceMode)
         {

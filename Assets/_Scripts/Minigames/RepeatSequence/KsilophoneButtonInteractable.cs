@@ -62,9 +62,12 @@ public class KsilophoneButtonInteractable : MonoBehaviour, IInteractable
     {
         if(Outline.state==OutlineState.show)
         {
-            outline.OutlineMode =  Outline2.Mode.OutlineVisible;
-            //spriteRenderer.sprite = OutlineSprite;
-            Invoke("HideOutline", SoundLength);
+            if (outline != null)
+            {
+                outline.OutlineMode = Outline2.Mode.OutlineVisible;
+                //spriteRenderer.sprite = OutlineSprite;
+                Invoke("HideOutline", SoundLength);
+            }
         }
     }
     private void HideOutline()

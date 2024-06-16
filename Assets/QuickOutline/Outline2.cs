@@ -84,8 +84,9 @@ public class Outline2 : MonoBehaviour {
   private Material outlineFillMaterial;
 
   private bool needsUpdate;
+    private bool playingAnim;
 
-  void Awake() {
+    void Awake() {
 
     // Cache renderers
     renderers = GetComponentsInChildren<Renderer>();
@@ -315,7 +316,10 @@ public class Outline2 : MonoBehaviour {
 
     internal void PlayOutlineAnimation()
     {
-        StartCoroutine(OutlineAnimation());
+
+
+        if (!playingAnim)
+        { StartCoroutine(OutlineAnimation()); playingAnim = true; }
     }
 
     private IEnumerator OutlineAnimation()
@@ -348,5 +352,6 @@ public class Outline2 : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
         OutlineMode = Mode.OutlineHidden;
+        playingAnim = false;
     }
 }

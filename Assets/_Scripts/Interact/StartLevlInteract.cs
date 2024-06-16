@@ -21,12 +21,10 @@ public class StartLevlInteract : MonoBehaviour, IInteractable
     {
         return "";
     }
-
     public Transform GetTransform()
     {
         return transform;
     }
-
     public void Interact(Transform interactorTransform)
     {
         dialogueManager.StartDialogue();
@@ -36,20 +34,13 @@ public class StartLevlInteract : MonoBehaviour, IInteractable
             StartCoroutine(CameraToPlayer());
         }
     }
-
-
     private IEnumerator CameraToPlayer()
     {
-        VirtualCamera1.enabled = false;
-        VirtualCamera1.enabled = true;
         Player.instance.SetNewCam(VirtualCamera1);
         Player.instance.OnDialogInteract(false, false);
         yield return new WaitForSeconds(timeToWait);
         Player.instance.OrigCameraReset();
         yield return new WaitForSeconds(timeToWait);
-        if (dialogueManager.isRunning == false)
-        {
-            Player.instance.ReturnNormal();
-        }
+        Player.instance.ReturnNormal();
     }
 }

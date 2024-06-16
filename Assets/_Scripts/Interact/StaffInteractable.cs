@@ -33,11 +33,11 @@ public class StaffInteractable : MonoBehaviour, IInteractable {
             }
             
             if (Input.GetKey(KeyCode.X))
-                transform.Rotate(new Vector3(1f, 0f), Space.World);
+                transform.Rotate(new Vector3(RotationSpeed, 0f), Space.World);
             if (Input.GetKey(KeyCode.Z))
-                transform.Rotate(new Vector3(0f, 0f, 1f) , Space.World);
+                transform.Rotate(new Vector3(0f, 0f, RotationSpeed) , Space.World);
             if (Input.GetKey(KeyCode.C))
-                transform.Rotate(new Vector3(0f, 1f, 0f) , Space.World);
+                transform.Rotate(new Vector3(0f, RotationSpeed, 0f) , Space.World);
         }
     }
 

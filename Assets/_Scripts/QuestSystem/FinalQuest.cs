@@ -6,46 +6,15 @@ using UnityEngine;
 using static Unity.VisualScripting.Dependencies.Sqlite.SQLite3;
 using UnityEngine.Rendering.UI;
 using System.Linq;
-public class Quest : MonoBehaviour
+using UnityEngine.SceneManagement;
+public class FinalQuest : Quest
 {
-    public string Title;
-    public string Description;
-    private bool isReached;
-    [HideInInspector]
-    public UnityEvent QuestCompleted;
     [SerializeField]
-    public List<Goal> Goals;
-    protected virtual void Awake()
+    public Loader.Scene LoadScene;
+    protected override void Awake()
     {
-        QuestCompleted.AddListener(() => isReached = true);
-        foreach (var goal in Goals)
-        {
-            goal.GoalCompleted.AddListener(OnGoalCompleted);
-        }    
-    }
-    public bool IsReached()
-    {
-        return isReached;
-    }
-    private void OnGoalCompleted()
-    {
-
-        Debug.Log("QUes's Goal completed");
-        foreach (var goal in Goals)
-        {
-            Debug.Log("Goal" + goal.Title);
-            if (!goal.IsReached)
-            {
-                Debug.Log("not conpleted");
-
-
-                return;
-            }
-            Debug.Log("all goals completed");
-
-        }
-        QuestCompleted.Invoke();
-        Debug.Log("QUestComlpeted");
+        base.Awake();
+        QuestCompleted.AddListener(()=>Loader.Load(LoadScene));
     }
 }
 

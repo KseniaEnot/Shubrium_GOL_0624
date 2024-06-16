@@ -119,9 +119,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: "\u041D\u0435 \u0445\u0430\u0447\u0443, \u0442\u0443\u0442 \u043A\u0430\u043A\u0430\u0448\u043A\u0430"
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
   Eated:
     m_PersistentCalls:
       m_Calls: []
+  disableOnInteract: 1
 --- !u!1 &2557091356249546494
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,9 +245,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: "\u041D\u044F\u043C \u043D\u044F\u043C"
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
   Eated:
     m_PersistentCalls:
       m_Calls: []
+  disableOnInteract: 1
 --- !u!1 &3123190668036163242
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,8 +277,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3123190668036163242}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.51676816, y: -0, z: -0, w: 0.8561255}
-  m_LocalPosition: {x: 0, y: 12.37, z: -0.286}
+  m_LocalRotation: {x: 0.070600145, y: 0.8862722, z: -0.3470274, w: 0.29851177}
+  m_LocalPosition: {x: -0.938, y: 1.836, z: 1.202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -341,8 +349,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5458219781225989698}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.28978246, y: -0, z: -0, w: 0.9570925}
-  m_LocalPosition: {x: -0.24, y: 20.88, z: -1.32}
+  m_LocalRotation: {x: 0.100567244, y: -0.8976082, z: 0.27177262, w: 0.33215272}
+  m_LocalPosition: {x: 0.328, y: 0.522, z: 0.772}
   m_LocalScale: {x: 1, y: 1.76, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -753,9 +761,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: "\u0421\u044A\u0435\u0441\u0442\u044C"
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
   Eated:
     m_PersistentCalls:
       m_Calls: []
+  disableOnInteract: 1
 --- !u!1001 &7858279967395534617
 PrefabInstance:
   m_ObjectHideFlags: 0
