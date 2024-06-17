@@ -1816,6 +1816,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7526739291563962947, guid: 1a2f097d2b2f8bf45b82705452587f75, type: 3}
       insertIndex: -1
       addedObject: {fileID: 624416357}
+    - targetCorrespondingSourceObject: {fileID: 7526739291563962947, guid: 1a2f097d2b2f8bf45b82705452587f75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 624416358}
   m_SourcePrefab: {fileID: 100100000, guid: 1a2f097d2b2f8bf45b82705452587f75, type: 3}
 --- !u!4 &175985603 stripped
 Transform:
@@ -7965,6 +7968,27 @@ MonoBehaviour:
     - {x: 0, y: 0.98078513, z: 0.19509123}
     - {x: 0, y: 0.98078555, z: -0.19508894}
     - {x: -0.70710677, y: 0.6935201, z: -0.13794863}
+--- !u!65 &624416358
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624416351}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003648049, y: 0.012843068, z: 0.022245053}
+  m_Center: {x: -0.00039916948, y: 0.0014628831, z: 0.0009179554}
 --- !u!1 &630485730
 GameObject:
   m_ObjectHideFlags: 0
@@ -13257,6 +13281,20 @@ PrefabInstance:
     - target: {fileID: 3252460836150584280, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
       propertyPath: m_Size.x
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854204774066830671, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: containerGameObject
+      value: 
+      objectReference: {fileID: 1432438688}
+    - target: {fileID: 3854204774066830671, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854204774066830671, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "\u041B\u0430\u0434\u043D\u043E, \u0431\u044B\u0441\u0442\u0440\u0435\u0435
+        \u043D\u0430\u0447\u043D\u0443 \u2013 \u0431\u044B\u0441\u0442\u0440\u0435\u0435
+        \u0437\u0430\u043A\u043E\u043D\u0447\u0443."
       objectReference: {fileID: 0}
     - target: {fileID: 4840924141380232335, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -73404,6 +73442,21 @@ PrefabInstance:
     - target: {fileID: 3252460836150584280, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
       propertyPath: m_Size.x
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854204774066830671, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: containerGameObject
+      value: 
+      objectReference: {fileID: 1432438688}
+    - target: {fileID: 3854204774066830671, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854204774066830671, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "\u041D\u0430\u043A\u0430\u0437\u044B\u0432\u0430\u0442\u044C \u0434\u0435\u0442\u0435\u0439
+        \u0434\u0435\u0436\u0443\u0440\u0441\u0442\u0432\u043E\u043C - \u043D\u0435\u043F\u0435\u0434\u0430\u0433\u043E\u0433\u0438\u0447\u043D\u043E.
+        \u041E\u0441\u043E\u0431\u0435\u043D\u043D\u043E \u0435\u0441\u043B\u0438
+        \u043E\u043D\u0438 \u043D\u0435 \u0432\u0438\u043D\u043E\u0432\u0430\u0442\u044B."
       objectReference: {fileID: 0}
     - target: {fileID: 4840924141380232335, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
       propertyPath: m_Materials.Array.data[0]

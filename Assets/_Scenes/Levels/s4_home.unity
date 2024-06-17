@@ -2488,6 +2488,19 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3854204774066830671, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: containerGameObject
+      value: 
+      objectReference: {fileID: 1652479186}
+    - target: {fileID: 3854204774066830671, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854204774066830671, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "\u041A\u0430\u0436\u0434\u044B\u0439 \u0440\u0430\u0437 \u043E\u0434\u043D\u043E
+        \u0438 \u0442\u043E \u0436\u0435\u2026"
+      objectReference: {fileID: 0}
     - target: {fileID: 4840924141380232335, guid: efe08008284c9064ba658e87ba09f9a8, type: 3}
       propertyPath: m_Enabled
       value: 0
