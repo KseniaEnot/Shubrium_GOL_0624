@@ -42,7 +42,7 @@ public class QuestsUI : MonoBehaviour
             line.style.height = 0;
             line.style.backgroundColor = Color.black;
             QuestsLabels[i].Add(line);
-            CompleteLines.Add(line);
+            //CompleteLines.Add(line);
         }
     }
     public void SetFinalQuestInfo()
@@ -51,10 +51,10 @@ public class QuestsUI : MonoBehaviour
         QuestsLabels[1].text = "";
         QuestsLabels[2].text = "";
         QuestsLabels[3].text = "";
-        foreach(var VisualElement in CompleteLines)
+        /*foreach(var VisualElement in CompleteLines)
         {
             VisualElement.style.height = 0;
-        }
+        }*/
     }
     public void GoalChanged(int newscore,int max,int i)
     {
@@ -66,7 +66,7 @@ public class QuestsUI : MonoBehaviour
         Debug.Log(scorestr);
         Debug.Log("GoalProgressTEXTCHANGED"+newscore+" "+ max+ " " +i);
     }
-    private List<VisualElement> CompleteLines = new List<VisualElement>();
+    //private List<VisualElement> CompleteLines = new List<VisualElement>();
     public void OnQuestComleted(int i)
     {
         if (i < QuestsLabels.Count && i >= 0)
@@ -76,7 +76,7 @@ public class QuestsUI : MonoBehaviour
             Debug.Log("QuestsLabelsCOunt" + QuestsLabels.Count);
             QuestsLabels[i].text = QuestsLabels[i].text.Substring(0, colonIndex) + ": 1/1";
             QuestsLabels[i].style.opacity = 0.5f;
-            CompleteLines[i].style.height = 2;
+            //CompleteLines[i].style.height = 2;
             Debug.Log("QuestCompleted");
         }
     }
