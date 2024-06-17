@@ -20,7 +20,8 @@ public class StaffInteractable : MonoBehaviour, IInteractable {
     }
     private void FixedUpdate()
     {
-        if(StaffModeNow == StaffMode.grabing)
+        if (GameController.IsPaused) return;
+        if (StaffModeNow == StaffMode.grabing)
         {
             if (interactor != null)
             {

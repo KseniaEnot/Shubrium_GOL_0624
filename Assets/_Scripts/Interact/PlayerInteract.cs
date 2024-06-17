@@ -21,6 +21,7 @@ public class PlayerInteract : MonoBehaviour {
     private float chargeTime;
     private void Update()
     {
+        if (GameController.IsPaused) return;
         setOutline();
         if (Input.GetKey(ThrowKey))
         {

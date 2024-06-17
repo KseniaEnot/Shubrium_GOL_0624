@@ -6,25 +6,27 @@ using System.Threading.Tasks;
 using UnityEngine;
 public class GameController : MonoBehaviour
 {
-    public bool IsPaused;
+    public static bool IsPaused=false;
     public static GameController instance;
     private void Awake()
     {
+        if(instance == null)
         instance = this;
     }
     public void Play()
     {
-        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
         IsPaused = false;
     }
     public void Pause()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
         IsPaused = true;
+        Cursor.lockState = CursorLockMode.None;
     }
     public void SwitchState()
     {
-
         if (IsPaused)
         {
             Play();

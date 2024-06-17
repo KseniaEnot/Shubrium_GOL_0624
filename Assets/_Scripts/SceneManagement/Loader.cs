@@ -28,7 +28,9 @@ public static class Loader
         {
             GameObject loadingGO = new GameObject("loadingScene "+ scene.ToString());
             loadingGO.AddComponent<LoadingMonoBehaviour>().StartCoroutine(LoadSceneAsync(scene));
-            
+            GameController.instance.Play();
+            if (scene == Scene.MainMenu)
+                Cursor.lockState = CursorLockMode.None;
         };
         SceneManager.LoadScene(Scene.Loading.ToString());
     }

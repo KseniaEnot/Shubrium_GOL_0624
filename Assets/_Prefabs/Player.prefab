@@ -318,6 +318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544d7826790ac114d8d8376ba37973e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerMovement: {fileID: 0}
+  PlayerPauseMenuUI: {fileID: 0}
   originCam: {fileID: 6975990888520695598}
   NewCamSetted:
     m_PersistentCalls:
@@ -381,6 +383,7 @@ MonoBehaviour:
   interactRange: 3
   HoldingObj: {fileID: 0}
   RayMethod: 1
+  outlineMode: 0
 --- !u!114 &929274592141787702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ac11133f05dad4f9cd30d8a2cd5b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockCursor: 1
   clampInDegrees: {x: 360, y: 180}
   sensitivity: {x: 2, y: 2}
   smoothing: {x: 1.5, y: 1.5}

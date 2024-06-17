@@ -31,16 +31,27 @@ public class StartLevlInteract : MonoBehaviour, IInteractable
         gameObject.GetComponent<Collider>().enabled = false;
         if (VirtualCamera1 != null)
         {
+            
+            dialogueManager.mnologueEnd.AddListener(() => {
+                if (animationIsGoing) Player.instance.OnDialogInteract(false, false);
+                else
+                {
+                    Player.instance.ReturnNormal();
+                }
+                }); 
             StartCoroutine(CameraToPlayer());
         }
     }
+    private bool animationIsGoing=false;
     private IEnumerator CameraToPlayer()
     {
-        Player.instance.SetNewCam(VirtualCamera1);
+        animationIsGoing=true;
         Player.instance.OnDialogInteract(false, false);
+        Player.instance.SetNewCam(VirtualCamera1);
         yield return new WaitForSeconds(1f);
         Player.instance.OrigCameraReset();
-        yield return new WaitForSeconds(timeToWait);
-        Player.instance.ReturnNormal(2f);
+        yield return new WaitForSeconds(2f);
+        Player.instance.ReturnNormal();
+        animationIsGoing=false; 
     }
 }

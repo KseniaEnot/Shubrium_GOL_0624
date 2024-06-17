@@ -12,6 +12,7 @@ public class PlayerInteractUI : MonoBehaviour {
     //[SerializeField] private TextMeshProUGUI interactTextMeshProUGUI;
 
     private void Update() {
+        if (GameController.IsPaused) return;
         if ((playerInteract.HoldingObj!=null))
         {
             Show(playerInteract.HoldingObj);
