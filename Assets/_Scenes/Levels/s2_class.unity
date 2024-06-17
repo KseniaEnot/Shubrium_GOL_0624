@@ -74618,6 +74618,11 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 976472716}
+    - target: {fileID: 3455692334287107886, guid: 12816f317e4cea840826855bd8642281, type: 3}
+      propertyPath: Title
+      value: "\u0421\u043B\u043E\u0436\u0438\u0442\u044C \u043A\u043D\u0438\u0433\u0438
+        \u043D\u0430 \u0441\u0442\u043E\u043B \u0443\u0447\u0438\u0442\u0435\u043B\u044F"
+      objectReference: {fileID: 0}
     - target: {fileID: 6174355534641406767, guid: 12816f317e4cea840826855bd8642281, type: 3}
       propertyPath: Title
       value: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043B\u043E\u0432\u0443\u044E
