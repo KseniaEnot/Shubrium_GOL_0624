@@ -74,7 +74,8 @@ public class QuestsUI : MonoBehaviour
             int colonIndex = QuestsLabels[i].text.IndexOf(':');
             if (colonIndex == -1 || colonIndex == QuestsLabels[i].text.Length - 1) return;
             Debug.Log("QuestsLabelsCOunt" + QuestsLabels.Count);
-            QuestsLabels[i].text = QuestsLabels[i].text.Substring(0, colonIndex) + ": 1/1"; 
+            QuestsLabels[i].text = QuestsLabels[i].text.Substring(0, colonIndex) + ": 1/1";
+            QuestsLabels[i].style.opacity = 0.5f;
             CompleteLines[i].style.height = 2;
             Debug.Log("QuestCompleted");
         }
