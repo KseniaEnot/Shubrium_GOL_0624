@@ -1,67 +1,64 @@
+using Assets._Scripts.Movement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UIElements;
+using static UnityEngine.UI.CanvasScaler;
 
 public class PauseMenuUI : MonoBehaviour
 {
     private UIDocument document;
     private VisualElement root;
     private VisualElement PauseMenu;
-    VisualElement a;
-        VisualElement b;
+    VisualElement ButtonsContainer;
+        VisualElement SettingsMenu;
     private Button Resumebtn;
 
-    private MainButtons mainButtons = new();
-    private SettingsMenu settingsMenu = new();
+    private MainButtons mainButtons=new();
+    private SettingsMenu settingsMenu=new();
     [SerializeField]
     AudioSource audioSource;
     [SerializeField]
     AudioMixer audioMixer;
-    private void Update()
+    public void Pause()
     {
-        if(Input.GetKeyUp(KeyCode.Escape))
+        GameController.instance.SwitchState();
+        if (GameController.IsPaused)
         {
-            GameController.instance.SwitchState();
-            if(GameController.instance.IsPaused)
-            {
-                Hide(a);
-                Hide(b);
-            }
-            else
-            {
-
-                Show(a);
-            }
+            Show(PauseMenu);
+        }
+        else
+        {
+            Hide(PauseMenu);
+            Hide(SettingsMenu);
         }
     }
-
     private void SwitchMenus()
     {
-        Switch(a);
+        Switch(ButtonsContainer);
     }
-   
-    private void Start()
+    private void Awake()
     {
         document = GetComponent<UIDocument>();
         root = document.rootVisualElement;
-        b = root.Q<TemplateContainer>("SettingsMenu");
-        settingsMenu.Initialize
-            (b, audioMixer, audioSource);
-
         PauseMenu = root.Q("PauseMenu");
+        SettingsMenu = root.Q<TemplateContainer>("SettingsMenu");
+        ButtonsContainer = PauseMenu.Q<TemplateContainer>("ButtonsContainer");
+        if (PauseMenu != null) { Debug.Log("DebugLog PauseMenu not null"); }
+        if (SettingsMenu != null) { Debug.Log("DebugLog SettingsMenu not null"); }
+        if (ButtonsContainer != null) { Debug.Log("DebugLog ButtonsContainer not null"); }
+        settingsMenu.Initialize
+            (SettingsMenu, audioMixer, audioSource);
+        mainButtons.Initialize(ButtonsContainer, SettingsMenu);
         Resumebtn = PauseMenu.Q("Resume") as Button;
-        a = PauseMenu.Q<TemplateContainer>("ButtonsContainer");
-        mainButtons.Initialize(a, b);
-
         Resumebtn.clicked += () =>
         {
-            GameController.instance.Play();
-            Hide(a);
-            Hide(b);
+            Pause();
         };
+        Hide(PauseMenu);
     }
     private void Hide(VisualElement a)
     {

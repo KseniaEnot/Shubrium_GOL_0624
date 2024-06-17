@@ -11,17 +11,25 @@ using UnityEngine.Events;
 
 namespace Assets._Scripts.Movement
 {
-    internal class Player : MonoBehaviour
+    public class Player : MonoBehaviour
     {
         public static Player instance;
-        PlayerMovement PlayerMovement;
+        public PlayerMovement PlayerMovement;
         CameraController CameraController;
         PlayerInteract PlayerInteract;
         [SerializeField]
+        public PauseMenuUI PlayerPauseMenuUI;
+        [SerializeField]
         public CinemachineVirtualCamera originCam;
         public UnityEvent NewCamSetted;
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+            {PlayerPauseMenuUI.Pause(); }
+        }
         public void Awake()
          {
+            GameController.IsPaused = false;
             instance = this;
             PlayerMovement=GetComponent<PlayerMovement>();
             CameraController= GetComponent<CameraController>();
@@ -35,6 +43,9 @@ namespace Assets._Scripts.Movement
         {
             CameraController.enabled = camera;
             PlayerMovement.enabled = movement;
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.freezeRotation = true;
+            rb.velocity = Vector3.zero;
         }
         public void ReturnNormal(float delay)
         {
@@ -49,6 +60,8 @@ namespace Assets._Scripts.Movement
         {
             PlayerMovement.enabled = true;
             CameraController.enabled = true;
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.freezeRotation = false;
         }
         public void SetNewCam(CinemachineVirtualCamera cam)
         {

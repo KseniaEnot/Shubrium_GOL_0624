@@ -27,6 +27,7 @@ public class MonologueUI : MonoBehaviour, IInteractable
     }
     public void Update()
     {
+        if (GameController.IsPaused) return;
         if (isRunning)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -83,8 +84,13 @@ public class MonologueUI : MonoBehaviour, IInteractable
             GetComponent<Collider>().enabled = false;
         }
         isRunning = false;
-        Player.instance.ReturnNormal();
+        PlayerOnDialogEnd();
         mnologueEnd.Invoke();
+    }
+    public void PlayerOnDialogEnd()
+    {
+        Debug.Log("GAME STOPPED");
+        Player.instance.ReturnNormal();
     }
     public void DisplayNextSentence()
     {

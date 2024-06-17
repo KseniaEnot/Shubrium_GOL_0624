@@ -11,8 +11,6 @@ namespace Assets._Scripts.Movement
     internal class CameraController : MonoBehaviour
     {
         [Header("Camera Settings")]
-        [Tooltip("Lock the cursor to the game screen on play")]
-        public bool lockCursor = true;
         [Tooltip("Clamp the camera angle (Stop the camera form \"snapping its neck\")")]
         public Vector2 clampInDegrees = new Vector2(360f, 180f);
         [Tooltip("The mouse sensitivity, both x and y")]
@@ -36,18 +34,12 @@ namespace Assets._Scripts.Movement
         }
         private void Update()
         {
+            if (GameController.IsPaused) return;
             cameraUpdate();
-        }
-        void FixedUpdate()
-        {
-            // Lock cursor handling
-            if (lockCursor)
-                Cursor.lockState = CursorLockMode.Locked;
-            else
-                Cursor.lockState = CursorLockMode.None;
         }
         public void cameraUpdate()
         {
+            
             // Allow the script to clamp based on a desired target value.
             var targetOrientation = Quaternion.Euler(targetDirection);
             var targetCharacterOrientation = Quaternion.Euler(targetCharacterDirection);

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 // By B0N3head 
 // All yours, use this script however you see fit, feel free to give credit if you want
@@ -96,17 +97,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (GameController.IsPaused) return;
         input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         wantingToJump = Input.GetKey(jump);
         wantingToCrouch = Input.GetKey(crouch);
         wantingToSprint = Input.GetKey(sprint);
         waitingToDrawOutline = Input.GetKey(outlineKey);
     }
-
-   
     void FixedUpdate()
     {
-        
+        if (GameController.IsPaused) return;
 
         // Double check if we are on the ground or not (Changes current speed if true)
         // --- QUICK EXPLINATION --- 
