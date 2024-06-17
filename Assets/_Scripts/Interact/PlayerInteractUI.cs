@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
+using Assets._Scripts.Movement;
 public class PlayerInteractUI : MonoBehaviour {
 
     [SerializeField] private GameObject containerGameObject;
@@ -13,6 +14,7 @@ public class PlayerInteractUI : MonoBehaviour {
 
     private void Update() {
         if (GameController.IsPaused) return;
+        if(Player.instance.inDialog) return;
         if ((playerInteract.HoldingObj!=null))
         {
             Show(playerInteract.HoldingObj);

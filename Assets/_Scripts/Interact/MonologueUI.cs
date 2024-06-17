@@ -60,6 +60,7 @@ public class MonologueUI : MonoBehaviour, IInteractable
         if (!isRunning)
         {
             Player.instance.OnDialogInteract(true, false);
+            Player.instance.inDialog = true;
             sentences = new Queue<string>();
             sentences.Clear();
             Debug.Log("StartDialogue " + gameObject.name);
@@ -73,7 +74,6 @@ public class MonologueUI : MonoBehaviour, IInteractable
             Show();
             Debug.Log("2");
             DisplayNextSentence();
-
         }
     }
     public void EndDialogue()
@@ -91,6 +91,7 @@ public class MonologueUI : MonoBehaviour, IInteractable
     {
         Debug.Log("GAME STOPPED");
         Player.instance.ReturnNormal();
+        Player.instance.inDialog = false;
     }
     public void DisplayNextSentence()
     {

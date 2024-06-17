@@ -13,6 +13,7 @@ namespace Assets._Scripts.Movement
 {
     public class Player : MonoBehaviour
     {
+        public bool inDialog;
         public static Player instance;
         public PlayerMovement PlayerMovement;
         CameraController CameraController;
