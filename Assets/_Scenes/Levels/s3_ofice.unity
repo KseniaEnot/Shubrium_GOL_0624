@@ -3184,12 +3184,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 553152892758298157, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 553152892758298157, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.268
+      value: 28.167
       objectReference: {fileID: 0}
     - target: {fileID: 553152892758298157, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.262
+      value: 4.822
       objectReference: {fileID: 0}
     - target: {fileID: 553152892758298157, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3225,11 +3229,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 628100078827466595, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.07900047
+      value: 0.1800003
       objectReference: {fileID: 0}
     - target: {fileID: 628100078827466595, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.42272726
+      value: 0.07666667
       objectReference: {fileID: 0}
     - target: {fileID: 628100078827466595, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3253,7 +3257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 783897139222342836, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.000000052452087
       objectReference: {fileID: 0}
     - target: {fileID: 3485720779467630859, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: field of view
@@ -3273,7 +3277,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: crouchHeight
-      value: 2
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: smoothCrouch
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: jumpCrouching
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: jumpMoveSpeed
@@ -3285,7 +3297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: standingHeight
-      value: 2
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 4473328252688518064, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: crouchMoveSpeed
@@ -7006,6 +7018,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7993054416977865358}
   - {fileID: 6840278283024449023}
   - {fileID: 1297101016344185624}
   - {fileID: 881610303536783496}
@@ -7024,7 +7037,6 @@ Transform:
   - {fileID: 7618676266429932247}
   - {fileID: 5174206558031445097}
   - {fileID: 9006828166386382246}
-  - {fileID: 7993054416977865358}
   - {fileID: 4183622496319549272}
   - {fileID: 7021400604221898830}
   - {fileID: 2140209626441779588}
@@ -7266,7 +7278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 3
   precomputeOutline: 0
@@ -7828,7 +7840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 3
   precomputeOutline: 0
@@ -8873,7 +8885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 0
+  outlineMode: 1
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 3
   precomputeOutline: 0
