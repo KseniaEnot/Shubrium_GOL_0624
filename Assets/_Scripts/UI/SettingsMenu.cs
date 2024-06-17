@@ -10,6 +10,9 @@ public class SettingsMenu :MonoBehaviour
     private Slider MasterVolumeSlider;
     private Slider MusicVolumeSlider;
     private Slider SoundVolumeSlider;
+    public AudioClip sound;
+     public AudioClip music;
+
     private AudioMixer audioMixer;
     AudioSource audioSource;
     const string MasterVolumestr = "MasterVolume";
@@ -25,7 +28,7 @@ public class SettingsMenu :MonoBehaviour
         MasterVolumeSlider = container.Q("MasterVolume") as Slider;
         MusicVolumeSlider = container.Q("MusicVolume") as Slider;
         SoundVolumeSlider = container.Q("SoundVolume") as Slider;
-        MasterVolumeSlider.RegisterValueChangedCallback(evt => VolumeChange(evt.newValue, VolumeType.MasterVolume.ToString()));
+        MasterVolumeSlider.RegisterValueChangedCallback(evt => VolumeChange(evt.newValue, VolumeType.MasterVolume));
         MusicVolumeSlider.RegisterValueChangedCallback(evt => VolumeChange(evt.newValue, VolumeType.MusicVolume));
         SoundVolumeSlider.RegisterValueChangedCallback(evt => VolumeChange(evt.newValue, VolumeType.SoundVolume));
         SetupInitialValues();
@@ -48,22 +51,25 @@ public class SettingsMenu :MonoBehaviour
         Debug.Log("new value" + value + " " + type);
         audioMixer.SetFloat(type.ToString(), value);
         PlayerPrefs.SetFloat(type.ToString(), value);
-    } private void VolumeChange(float value, string type)
-    {
-        Debug.Log("new value" + value + " " + type);
-        audioMixer.SetFloat(type, value);
-        PlayerPrefs.SetFloat(type, value);
-    }
+
+        audioSource.volume = value;
+        PlaySound(type);
+    } 
     private void PlaySound(VolumeType type)
     {
+        
         switch (type)
         {
             case VolumeType.MusicVolume:
+                audioSource.clip = music;
+                break;case VolumeType.MasterVolume:
+                audioSource.clip = sound;
+                break;case VolumeType.SoundVolume:
+                audioSource.clip = sound;
                 break;
         }
         if (!audioSource.isPlaying)
         {
-            //audioSource.clip = MeowSound;
             Debug.Log("audioSource plays " + type.ToString());
             audioSource.Play();
         }

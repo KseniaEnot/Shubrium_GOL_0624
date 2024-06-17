@@ -25,7 +25,7 @@ public class PauseMenuUI : MonoBehaviour
     AudioMixer audioMixer;
     public void Pause()
     {
-        GameController.instance.SwitchState();
+        GameController.instance.SwitchState();  
         if (GameController.IsPaused)
         {
             Show(PauseMenu);
@@ -56,6 +56,7 @@ public class PauseMenuUI : MonoBehaviour
         Resumebtn = PauseMenu.Q("Resume") as Button;
         Resumebtn.clicked += () =>
         {
+            GameController.instance.PlayButtonSound();
             Pause();
         };
         Hide(PauseMenu);

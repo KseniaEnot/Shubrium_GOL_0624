@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Assets._Scripts.Movement;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 // By B0N3head 
 // All yours, use this script however you see fit, feel free to give credit if you want
 [AddComponentMenu("Player Movement")]
+
+[RequireComponent(typeof(FootStepsController))]
 public class PlayerMovement : MonoBehaviour
 {
     //----------------------------------------------------
@@ -73,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
     public float DrawOutlineRange;
     public KeyCode Pause = KeyCode.Escape;
     public KeyCode StopGame = KeyCode.Space;
+    public FootStepsController FootStepsController;
     //----------------------------------------------------
     [Space]
     [Header("Debug Info")]
@@ -83,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
     public bool areWeCrouching = false;
     [Tooltip("The current speed I should be moving at")]
     public float currentSpeed;
+    public float footstepsspeed;
     //----------------------------------------------------
     private Rigidbody rb;
     Vector3 input = new Vector3();
@@ -91,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        FootStepsController=GetComponent<FootStepsController>();
         rb = gameObject.GetComponent<Rigidbody>();
         currentSpeed = walkMoveSpeed;
     }
@@ -170,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
         input = input.normalized;
         Vector3 forwardVel = transform.forward * currentSpeed * input.z;
         Vector3 horizontalVel = transform.right * currentSpeed * input.x;
+        FootStepsController.Play(rb.velocity.magnitude);
         rb.velocity = horizontalVel + forwardVel + new Vector3(0, rb.velocity.y, 0);
 
         //Extra gravity for more nicer jumping

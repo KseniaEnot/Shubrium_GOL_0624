@@ -421,6 +421,10 @@ PrefabInstance:
       propertyPath: standingHeight
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4805333111994766893, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: interval
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4959942915448863786, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: originCam
       value: 
@@ -433,6 +437,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6277974252984931943, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f545c0d9e021ee44e9135ac767d0edc8, type: 3}
     - target: {fileID: 6975990888520695598, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: m_Enabled
       value: 0

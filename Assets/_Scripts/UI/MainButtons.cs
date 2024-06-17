@@ -23,6 +23,7 @@ public class MainButtons
         {
             Debug.Log("Load scen");
             Loader.Load(Loader.Scene.s1_home);
+            GameController.instance.PlayButtonSound();
         };
         Loadbtn.clicked += () =>
         {
@@ -31,13 +32,15 @@ public class MainButtons
         SettingsMenu.style.display = DisplayStyle.None;
         Settingsbtn.clicked += () =>
         {
-            if(SettingsMenu.style.display == DisplayStyle.Flex)
+            GameController.instance.PlayButtonSound();
+            if (SettingsMenu.style.display == DisplayStyle.Flex)
                 SettingsMenu.style.display= DisplayStyle.None;
             else
                 SettingsMenu.style.display= DisplayStyle.Flex;
         };
         Exitbtn.clicked += () =>
         {
+            GameController.instance.PlayButtonSound();
             if (SceneManager.GetActiveScene().name == "MainMenu")
                 Application.Quit();
             else

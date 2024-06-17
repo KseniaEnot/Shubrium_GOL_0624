@@ -11,6 +11,7 @@ public class Quest : MonoBehaviour
     public UnityEvent QuestCompleted;
     [SerializeField]
     public List<Goal> Goals;
+    AudioClip questComplete;
     protected virtual void Awake()
     {
         QuestCompleted.AddListener(() => isReached = true);
@@ -39,6 +40,7 @@ public class Quest : MonoBehaviour
             Debug.Log("all goals completed");
 
         }
+        GameController.instance.PlayQuestComplete();
         QuestCompleted.Invoke();
         Debug.Log("QUestComlpeted");
     }

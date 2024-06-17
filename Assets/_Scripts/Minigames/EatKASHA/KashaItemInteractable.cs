@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets._Scripts.Movement;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,9 @@ namespace Assets._Scripts.Minigames.EatKASHA
         public string Text;
         public UnityEvent OnInteract;
         public UnityEvent Eated;
-        public bool disableOnInteract = true;   
+        public bool disableOnInteract = true;
+
+        public List<AudioClip> clips;
         private void Awake()
         {
             gameObject.GetComponent<Collider>().enabled = false;
@@ -34,6 +37,8 @@ namespace Assets._Scripts.Minigames.EatKASHA
             OnInteract.Invoke();
             if(disableOnInteract) gameObject.SetActive(false);
             Eated?.Invoke();
+            if (clips != null && clips.Count != 0)
+            GameController.instance.PlaySound(FootStepsController.Random(clips));
         }
     }
 }

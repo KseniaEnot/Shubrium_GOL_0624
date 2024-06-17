@@ -8228,6 +8228,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   disableOnInteract: 1
+  clips: []
 --- !u!65 &502268288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12597,6 +12598,22 @@ PrefabInstance:
       propertyPath: standingHeight
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4805333111994766893, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: steps.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805333111994766893, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: steps.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0170fbb20378cd8468fdfc908b081e04, type: 3}
+    - target: {fileID: 4805333111994766893, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: steps.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 71d0c0cd8763225499caf42dd670976a, type: 3}
+    - target: {fileID: 4805333111994766893, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: steps.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: f2517fa617b65cd4c9606bf9bf8126fc, type: 3}
     - target: {fileID: 4959942915448863786, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: originCam
       value: 
@@ -12609,6 +12626,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6277974252984931943, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 01d35fb5302d76d44b61fb0be20df5a7, type: 3}
     - target: {fileID: 6975990888520695598, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -17713,6 +17734,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   disableOnInteract: 1
+  clips: []
 --- !u!1 &4069784063816106965
 GameObject:
   m_ObjectHideFlags: 0
@@ -18639,6 +18661,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   disableOnInteract: 1
+  clips: []
 --- !u!1 &5675435758953081536
 GameObject:
   m_ObjectHideFlags: 0
@@ -18847,6 +18870,7 @@ MonoBehaviour:
   interactText: "\u041F\u043E\u0434\u043D\u044F\u0442\u044C"
   RotationSpeed: 3
   StaffModeNow: 1
+  clips: []
 --- !u!54 &6088261515967479648
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25714,6 +25738,7 @@ MonoBehaviour:
   interactText: "\u041F\u043E\u0434\u043D\u044F\u0442\u044C"
   RotationSpeed: 3
   StaffModeNow: 1
+  clips: []
 --- !u!54 &7191914218009557178
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28507,6 +28532,7 @@ MonoBehaviour:
   interactText: "\u041F\u043E\u0434\u043D\u044F\u0442\u044C"
   RotationSpeed: 3
   StaffModeNow: 1
+  clips: []
 --- !u!54 &8332475188458093668
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30935,6 +30961,7 @@ MonoBehaviour:
   interactText: "\u041F\u043E\u0434\u043D\u044F\u0442\u044C"
   RotationSpeed: 3
   StaffModeNow: 1
+  clips: []
 --- !u!54 &8609155026580003090
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34175,6 +34202,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   disableOnInteract: 1
+  clips: []
 --- !u!23 &8814234036883862792
 MeshRenderer:
   m_ObjectHideFlags: 0

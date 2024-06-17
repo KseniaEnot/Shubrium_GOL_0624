@@ -1,3 +1,4 @@
+using Assets._Scripts.Movement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ public class StaffInteractable : MonoBehaviour, IInteractable {
     private Transform interactor;
     private Rigidbody rb;
     private float range;
+    public List< AudioClip> clips;
     private void Awake() {
         rb= gameObject.GetComponent<Rigidbody>();
     }
@@ -58,6 +60,8 @@ public class StaffInteractable : MonoBehaviour, IInteractable {
             Pickup(interactorTransform);
         else
             Drop();
+        if (clips != null && clips.Count != 0)
+            GameController.instance.PlaySound(FootStepsController.Random(clips));
         //animator.SetTrigger("Talk");
     }
     public void Throw(float force)

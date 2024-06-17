@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets._Scripts.Movement;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,24 @@ public class GameController : MonoBehaviour
 {
     public static bool IsPaused=false;
     public static GameController instance;
+    [SerializeField]
+    public AudioClip QuestCompleteSOund;
+    [SerializeField]
+    private AudioSource audioSourceQuests;
+    [SerializeField]
+    private AudioSource buttonClick;
+    [SerializeField]
+    public AudioSource ForSounds;
+    [SerializeField]
+    AudioClip btnSound;
     private void Awake()
     {
-        if(instance == null)
-        instance = this;
+
+        if (instance == null)
+        { 
+            instance = this;
+            ForSounds.playOnAwake = false;
+        }
     }
     public void Play()
     {
@@ -32,5 +47,17 @@ public class GameController : MonoBehaviour
             Play();
         }
         else Pause();
+    }
+    public void PlayQuestComplete()
+    {
+        audioSourceQuests.PlayOneShot(QuestCompleteSOund);
+    }
+    public void PlaySound(AudioClip sound)
+    {
+        ForSounds.PlayOneShot(sound);
+    }
+    public void PlayButtonSound()
+    {
+        buttonClick.PlayOneShot(btnSound);
     }
 }
