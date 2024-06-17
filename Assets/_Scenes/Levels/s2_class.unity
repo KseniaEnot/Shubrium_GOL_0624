@@ -18648,12 +18648,9 @@ PrefabInstance:
       propertyPath: crouchDownSpeed
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 4959942915448863786, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
-      propertyPath: originCam
-      value: 
-      objectReference: {fileID: 2028708813}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7787783727641880716, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
@@ -19551,17 +19548,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   disableOnInteract: 1
---- !u!114 &2028708813 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6975990888520695598, guid: 2d4a11175451c63458e32dca85f2c0fd, type: 3}
-  m_PrefabInstance: {fileID: 1677825606}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2054203164
 PrefabInstance:
   m_ObjectHideFlags: 0
