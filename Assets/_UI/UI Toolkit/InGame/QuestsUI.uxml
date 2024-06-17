@@ -7,4 +7,5 @@
         <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Example3" enable-rich-text="false" class="Text" style="height: 45px; width: 200px; white-space: normal; text-overflow: clip; -unity-text-align: upper-left; max-width: 200px;" />
         <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Example4" class="Text" style="height: 45px; width: 200px; white-space: normal; text-overflow: clip; -unity-text-align: upper-left; max-width: 200px;" />
     </ui:GroupBox>
+    <ui:VisualElement name="Dot" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/_UI/Sprites/2D/Tochka.png?fileID=2800000&amp;guid=7eae0c0b95e636d4eb20c0346c0a08e0&amp;type=3#Tochka&quot;); width: 10px; height: 10px; top: 50%; position: absolute; align-items: center; left: 960px;" />
 </ui:UXML>
